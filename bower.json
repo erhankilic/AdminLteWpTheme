@@ -1,0 +1,9 @@
+{
+  "name": "İdea Yazılım",
+  "description": "İdea Yazılım Wordpress Tema",
+  "version": "1",
+  "homepage": "https://ideayazilim.net",
+  "dependencies": {
+    "AdminLTE": "admin-lte#~2.3.0"
+  }
+}
