@@ -39,7 +39,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 <div class="wrapper">
 
     <header class="main-header">
@@ -61,7 +61,12 @@
             <!-- Navbar Right Menu -->
 
             <div class="navbar-custom-menu">
-                <?php wp_nav_menu( array( 'theme_location' => 'headermenu' , 'menu_class' => 'nav navbar-nav', 'walker' => new Header_Nav_Menu()) ); ?>
+                <ul class="nav navbar-nav">
+                    <?php wp_nav_menu_no_ul() ?>
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                </ul>
             </div>
 
         </nav>
@@ -73,9 +78,9 @@
             <!-- search form -->
             <form action="<?php bloginfo('url'); ?>" method="get" class="sidebar-form">
                 <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <input type="text" name="s" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
                 </div>
             </form>

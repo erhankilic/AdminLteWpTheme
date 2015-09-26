@@ -6,6 +6,26 @@ add_theme_support('nav-menus');
 register_nav_menu('sidebar', 'Sidebar');
 register_nav_menu('headermenu', 'Header Menu');
 
+/* Breadcrums Function */
+function breadcrums() {
+    if (!is_home()) {
+        echo '<li><i class="fa fa-dashboard"></i> ';
+        bloginfo('name');
+        echo '</li><li  class="active">';
+        if (is_category()) {
+            echo '<a href="#">'.the_category('title_li=').'</a>';
+        }
+        elseif (is_single()) {
+            echo '<a href="#">'.get_the_title() .'</a>' ;
+        }
+
+        elseif (is_page()) {
+            echo  '<a href="#">'.get_the_title() .'</a>';
+        }
+        echo "</li>";
+    }
+}
+
 /* Making Submenu */
 class Sidebar_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth) {
@@ -58,3 +78,31 @@ class Header_Nav_Menu extends Walker_Nav_Menu {
         $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
     }
 }
+
+//Removind ul elements
+function wp_nav_menu_no_ul()
+{
+    $options = array(
+        'echo' => false,
+        'container' => false,
+        'theme_location' => 'headermenu',
+        'walker' => new Header_Nav_Menu()
+    );
+
+    $menu = wp_nav_menu($options);
+    echo preg_replace(array(
+        '#^<ul[^>]*>#',
+        '#</ul>$#'
+    ), '', $menu);
+
+}
+
+//Register Sidebars
+if ( function_exists('register_sidebar') )
+    register_sidebar(array(
+        'name' => 'Right Bar',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="control-sidebar-heading">',
+        'after_title' => '</h3>',
+    ));

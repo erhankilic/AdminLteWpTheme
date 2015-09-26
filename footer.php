@@ -1,3 +1,17 @@
+<footer class="main-footer">
+    <strong>Copyright &copy; <?php echo date( 'Y' ); ?> <a href="<?php bloginfo('url'); ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>.</strong> All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark" id="right-bar">
+    <!-- Tab pane -->
+    <div class="tab-content">
+        <?php dynamic_sidebar('Right Bar'); ?>
+        <!-- /.control-sidebar-menu -->
+    </div>
+</aside><!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
 <div class="control-sidebar-bg"></div>
 
 </div><!-- ./wrapper -->

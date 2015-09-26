@@ -7,3 +7,46 @@
 	Author URI: http://www.ideayazilim.net
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, kişisel blog teması, erhan kılıç
 */
+
+ #right-bar .tab-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 -15px;
+}
+ #right-bar .tab-content ul > li > a {
+	display: block;
+	padding: 3px 15px;
+}
+ #right-bar .tab-content ul > li > a:before,
+ #right-bar .tab-content ul > li > a:after {
+	content: " ";
+	display: table;
+}
+ #right-bar .tab-content ul > li > a:after {
+	clear: both;
+}
+ #right-bar .tab-content ul > li > a > .control-sidebar-subheading {
+	margin-top: 0;
+}
+ #right-bar .tab-content ul .menu-icon {
+	float: left;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 35px;
+}
+ #right-bar .tab-content ul .menu-info {
+	margin-left: 45px;
+	margin-top: 3px;
+}
+ #right-bar .tab-content ul .menu-info > .control-sidebar-subheading {
+	margin: 0;
+}
+ #right-bar .tab-content ul .menu-info > p {
+	margin: 0;
+	font-size: 11px;
+}
+ #right-bar .tab-content ul .progress {
+	margin: 0;
+}
