@@ -58,11 +58,8 @@
                     <!-- END timeline item -->
                     <?php endwhile; ?>
                     <?php endif; ?>
-
-                    <li>
-                        <i class="fa fa-clock-o bg-gray"></i>
-                    </li>
                 </ul>
+                <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
             <!-- /.col -->
         </div>

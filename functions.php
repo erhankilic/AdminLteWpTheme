@@ -98,11 +98,25 @@ function wp_nav_menu_no_ul()
 }
 
 //Register Sidebars
-if ( function_exists('register_sidebar') )
-    register_sidebar(array(
-        'name' => 'Right Bar',
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="control-sidebar-heading">',
-        'after_title' => '</h3>',
-    ));
+register_sidebar(array(
+    'name' => 'Right Bar',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="control-sidebar-heading">',
+    'after_title' => '</h3>',
+));
+
+//Infinite Scroll
+function wp_infinitepaginate(){
+    $loopFile        = $_POST['loop_file'];
+    $paged           = $_POST['page_no'];
+    $posts_per_page  = get_option('posts_per_page');
+
+    # Load the posts
+    query_posts(array('paged' => $paged ));
+    get_template_part( $loopFile );
+
+    exit;
+}
+add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate');           // for logged in user
+add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if user not logged in

@@ -33,6 +33,32 @@
 <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/plugins/chartjs/Chart.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var count = 2;
+        $(window).scroll(function(){
+            if  ($(window).scrollTop() == $(document).height() - $(window).height()){
+                loadArticle(count);
+                count++;
+            }
+        });
+
+        function loadArticle(pageNumber){
+            $('a#inifiniteLoader').show('fast');
+            $.ajax({
+                url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+                type:'POST',
+                data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
+                success: function (html) {
+                    $('li#inifiniteLoader').hide('1000');
+                    $("ul.timeline").append(html);
+                }
+            });
+            return false;
+        }
+
+    });
+</script>
 </body>
 <?php wp_footer(); ?>
 </html>
