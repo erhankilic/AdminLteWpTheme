@@ -117,10 +117,20 @@ register_sidebar(array(
 function wp_infinitepaginate(){
     $loopFile        = $_POST['loop_file'];
     $paged           = $_POST['page_no'];
-    $posts_per_page  = get_option('posts_per_page');
+    $action          = $_POST['what'];
+    $value           = $_POST['value'];
 
+    if($action == 'author_name'){
+        $arg = array('author_name' => $value, 'paged' => $paged, 'post_status' => 'publish' );
+    }elseif($action == 'category_name'){
+        $arg = array('category_name' => $value, 'paged' => $paged, 'post_status' => 'publish' );
+    }elseif($action == 'search'){
+        $arg = array('s' => $value, 'paged' => $paged, 'post_status' => 'publish' );
+    }else{
+        $arg = array('paged' => $paged, 'post_status' => 'publish');
+    }
     # Load the posts
-    query_posts(array('paged' => $paged ));
+    query_posts( $arg );
     get_template_part( $loopFile );
 
     exit;

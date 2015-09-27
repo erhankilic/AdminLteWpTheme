@@ -36,12 +36,14 @@
                                     <?php the_content();?>
                                 </div>
                                 <ul class="list-inline">
-                                    <li><a href="#" class="link-black text-sm"><i
-                                                class="fa fa-user margin-r-5"></i> <?php the_author(); ?></a></li>
-                                    <li><a href="#" class="link-black text-sm"><i
-                                                class="fa fa-folder-open margin-r-5"></i> <?php the_category(', ') ?></a></li>
-                                    <li class="pull-right"><a href="#" class="link-black text-sm"><i
-                                                class="fa fa-comments-o margin-r-5"></i> Comments (<?php comments_number('0', '1', '%' );?>)</a></li>
+                                    <li>
+                                        <i class="fa fa-user margin-r-5"></i>
+                                        <a href="<?php bloginfo('url'); ?>/author/<?php the_author(); ?>" class="text-sm">
+                                            <?php the_author(); ?>
+                                        </a>
+                                    </li>
+                                    <li><i class="fa fa-folder-open margin-r-5"></i> <?php the_category(', ') ?></li>
+                                    <li class="pull-right"><i class="fa fa-comments-o margin-r-5"></i> Comments (<?php comments_number('0', '1', '%' );?>)</li>
                                 </ul>
                                 <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -56,14 +58,14 @@
                                                 <li>
                                                     <a href="<?php the_permalink() ?>">
                                                         <div class="col-sm-12">
-                                                            <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
+                                                            <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail'); if ( has_post_thumbnail() ) { ?>
 
                                                                 <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
 
                                                             <?php } ?>
+                                                        </div>
                                                     </a>
-                                                    <a class="users-list-name" href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                                                    <span class="users-list-date"><?php the_time('d.m.Y ') ?></span>
+                                                    <span class="users-list-date"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
                                                 </li>
                                             <?php } ?>
                                         </ul><!-- /.users-list -->

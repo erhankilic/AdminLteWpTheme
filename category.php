@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+<?php
+$cat = get_query_var('cat');
+$yourcat = get_category ($cat);
+?>
 
 <div class="content-wrapper">
     <!-- Main content -->
@@ -6,7 +10,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                <?php printf( __( '"%s"', 'twentytwelve' ), single_cat_title( '', false ) ); ?>
+                "<?php echo single_cat_title(); ?>"
             </h1>
             <ol class="breadcrumb">
                 <?php breadcrums() ?>
@@ -37,16 +41,18 @@
                                 <div class="timeline-body">
                                     <div class="row">
                                         <div class="col-lg-3 col-sm-4 col-xs-6">
-                                            <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
+                                            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                                <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
 
-                                                <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
+                                                    <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
 
-                                            <?php } ?>
+                                                <?php } ?>
+                                            </a>
                                         </div>
                                         <div class="col-lg-9 col-sm-8 col-xs-6">
                                             <?php the_excerpt_rss(); ?>
                                             <div style="margin-top: 10px">
-                                                <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">Read more</a>
+                                                <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -88,5 +94,36 @@
     </section>
     <!-- /.content -->
 </div><!-- /.content-wrapper -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            var count = 2;
+            var total = <?php echo $wp_query->max_num_pages; ?>;
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    if (count > total) {
+                        return false;
+                    } else {
+                        loadArticle(count);
+                    }
+                    count++;
+                }
+            });
+
+            function loadArticle(pageNumber) {
+                $('a#inifiniteLoader').show('fast');
+                $.ajax({
+                    url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+                    type: 'POST',
+                    data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop&what=category_name&value=<?php echo $yourcat->slug; ?>',
+                    success: function (html) {
+                        $('li#inifiniteLoader').hide('1000');
+                        $("ul.timeline").append(html);
+                    }
+                });
+                return false;
+            }
+
+        });
+    </script>
 
 <?php get_footer(); ?>
