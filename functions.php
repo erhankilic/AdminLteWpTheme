@@ -13,14 +13,14 @@ function breadcrums() {
         bloginfo('name');
         echo '</li><li  class="active">';
         if (is_category()) {
-            echo '<a href="#">'.the_category('title_li=').'</a>';
+            echo the_category('title_li=');
         }
         elseif (is_single()) {
-            echo '<a href="#">'.get_the_title() .'</a>' ;
+            echo get_the_title();
         }
 
         elseif (is_page()) {
-            echo  '<a href="#">'.get_the_title() .'</a>';
+            echo  get_the_title();
         }
         echo "</li>";
     }
@@ -103,6 +103,13 @@ register_sidebar(array(
     'before_widget' => '<div>',
     'after_widget' => '</div>',
     'before_title' => '<h3 class="control-sidebar-heading">',
+    'after_title' => '</h3>',
+));
+register_sidebar(array(
+    'name' => 'Side Bar',
+    'before_widget' => '<div class="box box-primary"><div class="box-body">',
+    'after_widget' => '</div></div>',
+    'before_title' => '<h3 class="profile-username text-center">',
     'after_title' => '</h3>',
 ));
 

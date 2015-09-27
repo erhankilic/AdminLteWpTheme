@@ -8,48 +8,86 @@
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, kişisel blog teması, erhan kılıç
 */
 
- #right-bar .tab-content ul {
-	list-style: none;
-	padding: 0;
-	margin: 0 -15px;
+#right-bar .tab-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 -15px;
 }
- #right-bar .tab-content ul > li > a {
-	display: block;
-	padding: 3px 15px;
+
+#right-bar .tab-content ul > li > a {
+    display: block;
+    padding: 3px 15px;
 }
- #right-bar .tab-content ul > li > a:before,
- #right-bar .tab-content ul > li > a:after {
-	content: " ";
-	display: table;
+
+#right-bar .tab-content ul > li > a:before,
+#right-bar .tab-content ul > li > a:after {
+    content: " ";
+    display: table;
 }
- #right-bar .tab-content ul > li > a:after {
-	clear: both;
+
+#right-bar .tab-content ul > li > a:after {
+    clear: both;
 }
- #right-bar .tab-content ul > li > a > .control-sidebar-subheading {
-	margin-top: 0;
+
+#right-bar .tab-content ul > li > a > .control-sidebar-subheading {
+    margin-top: 0;
 }
- #right-bar .tab-content ul .menu-icon {
-	float: left;
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 35px;
+
+#right-bar .tab-content ul .menu-icon {
+    float: left;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
 }
- #right-bar .tab-content ul .menu-info {
-	margin-left: 45px;
-	margin-top: 3px;
+
+#right-bar .tab-content ul .menu-info {
+    margin-left: 45px;
+    margin-top: 3px;
 }
- #right-bar .tab-content ul .menu-info > .control-sidebar-subheading {
-	margin: 0;
+
+#right-bar .tab-content ul .menu-info > .control-sidebar-subheading {
+    margin: 0;
 }
- #right-bar .tab-content ul .menu-info > p {
-	margin: 0;
-	font-size: 11px;
+
+#right-bar .tab-content ul .menu-info > p {
+    margin: 0;
+    font-size: 11px;
 }
- #right-bar .tab-content ul .progress {
-	margin: 0;
+
+#right-bar .tab-content ul .progress {
+    margin: 0;
 }
- #inifiniteLoader {
-	 text-align: center;
- }
+
+#inifiniteLoader {
+    text-align: center;
+}
+
+#post .description {
+    margin-bottom: 10px;
+}
+
+#post .description h2 {
+    display: inline-block;
+}
+#post .post-content img{
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+    margin: 10px 10px 10px 10px;
+}
+#post .post-content .alignleft{
+    float: left;
+}
+#post .post-content .alignright{
+    float: right;
+}
+#post .post-content .aligncenter{
+    text-align: center;
+    margin: 0 auto;
+}
+#post .side-bar ul {
+    padding-left: 0;
+    list-style-type: none;
+}

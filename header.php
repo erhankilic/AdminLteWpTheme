@@ -39,7 +39,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition skin-purple fixed sidebar-mini">
 <div class="wrapper">
 
     <header class="main-header">
@@ -64,7 +64,7 @@
                 <ul class="nav navbar-nav">
                     <?php wp_nav_menu_no_ul() ?>
                     <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> Bar</a>
                     </li>
                 </ul>
             </div>
