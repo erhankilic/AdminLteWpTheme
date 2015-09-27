@@ -42,6 +42,6 @@
     <?php else : ?>
                 </ul>
                 <div class="error-page">
-                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Articles is finished.</h3>
+                    <h3><i class="fa fa-warning text-yellow"></i> Oops! There is no article to show!</h3>
                 </div><!-- /.error-page -->
 <?php endif; ?>

@@ -96,3 +96,25 @@
     padding-left: 0;
     list-style-type: none;
 }
+#post ol.commentlist {
+    padding-left: 0;
+    list-style-type: none;
+}
+#post ol.commentlist ul {
+    list-style-type: none;
+}
+#post ol.commentlist li {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #444;
+    padding: 5px;
+    position: relative;
+}
+#post ol.commentlist .comment-author,
+#post ol.commentlist .comment-meta {
+    display: inline-block;
+}
+#post ol.commentlist .comment-meta {
+    float: right;
+}
