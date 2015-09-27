@@ -50,13 +50,30 @@
                             </div>
                             <div class="timeline-footer">
                                 <p>
-                                    <i class="fa fa-user"></i> <?php the_author(); ?> | <i class="fa fa-folder-open"></i> <?php the_category(', ') ?> | <i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments' );?>
+                                    <i class="fa fa-user"></i> <a href="<?php bloginfo('url'); ?>/author/<?php the_author(); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> | <i class="fa fa-folder-open"></i> <?php the_category(', ') ?> | <i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments' );?>
                                 </p>
                             </div>
                         </div>
                     </li>
                     <!-- END timeline item -->
                     <?php endwhile; ?>
+                    <?php else : ?>
+                </ul>
+                <div class="error-page">
+                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Articles not found.</h3>
+                    <p>
+                        There is no article.
+                        Meanwhile, you may <a href="<?php bloginfo('url'); ?>">return to home</a> or try using the search form.
+                    </p>
+                    <form action="<?php bloginfo('url'); ?>" class="search-form">
+                        <div class="input-group">
+                            <input type="text" name="s" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div><!-- /.input-group -->
+                    </form>
+                </div><!-- /.error-page -->
                     <?php endif; ?>
                 </ul>
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>

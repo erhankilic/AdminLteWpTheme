@@ -8,6 +8,10 @@
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, kişisel blog teması, erhan kılıç
 */
 
+.content-header {
+    padding: 15px;
+}
+
 #right-bar .tab-content ul {
     list-style: none;
     padding: 0;
@@ -62,6 +66,7 @@
 
 #inifiniteLoader {
     text-align: center;
+    display: none;
 }
 
 #post .description {

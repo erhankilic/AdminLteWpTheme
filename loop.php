@@ -39,4 +39,9 @@
     </li>
     <!-- END timeline item -->
 <?php endwhile; ?>
+    <?php else : ?>
+                </ul>
+                <div class="error-page">
+                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Articles is finished.</h3>
+                </div><!-- /.error-page -->
 <?php endif; ?>
