@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<?php
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+?>
 
 <div class="content-wrapper">
     <!-- Main content -->
@@ -6,10 +9,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                <?php printf( __( 'Author: %s', 'twentytwelve' ), get_the_author() ); ?>
+                Author: <?php echo $curauth->display_name; ?>
             </h1>
             <ol class="breadcrumb">
-                <?php breadcrums() ?>
+                <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
+                <li class="active"><?php echo $curauth->display_name; ?></li>
             </ol>
         </section>
 
