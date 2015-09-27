@@ -43,17 +43,36 @@
                                     <li class="pull-right"><a href="#" class="link-black text-sm"><i
                                                 class="fa fa-comments-o margin-r-5"></i> Comments (<?php comments_number('0', '1', '%' );?>)</a></li>
                                 </ul>
+                                <?php
+                                // If comments are open or we have at least one comment, load up the comment template
+                                if (comments_open() || '0' != get_comments_number()) :
+                                    comments_template();
+                                endif;
+                                ?>
+                                <div class="box box-primary">
+                                    <div class="box-body no-padding">
+                                        <ul class="users-list clearfix">
+                                            <?php $posts = get_posts('orderby=rand&numberposts=8'); foreach($posts as $post) { ?>
+                                                <li>
+                                                    <a href="<?php the_permalink() ?>">
+                                                        <div class="col-sm-12">
+                                                            <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
+
+                                                                <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
+
+                                                            <?php } ?>
+                                                    </a>
+                                                    <a class="users-list-name" href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                                    <span class="users-list-date"><?php the_time('d.m.Y ') ?></span>
+                                                </li>
+                                            <?php } ?>
+                                        </ul><!-- /.users-list -->
+                                    </div><!-- /.box-body -->
+                                </div><!--/.box -->
                             </div>
                             <!-- /.post -->
                             <?php endwhile; ?>
                             <?php endif; ?>
-
-                            <?php
-                            // If comments are open or we have at least one comment, load up the comment template
-                            if (comments_open() || '0' != get_comments_number()) :
-                                comments_template();
-                            endif;
-                            ?>
 
                         </div>
                         <!-- /.box-body -->

@@ -118,3 +118,6 @@
 #post ol.commentlist .comment-meta {
     float: right;
 }
+#post ul.users-list li {
+    height: 200px;
+}
