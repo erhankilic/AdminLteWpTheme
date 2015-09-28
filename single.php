@@ -57,13 +57,11 @@
                                             <?php $posts = get_posts('orderby=rand&numberposts=8'); foreach($posts as $post) { ?>
                                                 <li>
                                                     <a href="<?php the_permalink() ?>">
-                                                        <div class="col-sm-12">
-                                                            <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail'); if ( has_post_thumbnail() ) { ?>
+                                                        <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail'); if ( has_post_thumbnail() ) { ?>
 
-                                                                <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
+                                                            <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
 
-                                                            <?php } ?>
-                                                        </div>
+                                                        <?php } ?>
                                                     </a>
                                                     <span class="users-list-date"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
                                                 </li>

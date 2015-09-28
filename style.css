@@ -119,5 +119,9 @@
     float: right;
 }
 #post ul.users-list li {
-    min-height: 200px;
+    height: 200px;
+}
+#post ul.users-list li img {
+    max-height: 150px;
+    margin: 0 auto;
 }
