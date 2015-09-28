@@ -114,7 +114,7 @@ $tag_slug = $tag->slug;
             function loadArticle(pageNumber) {
                 $('a#inifiniteLoader').show('fast');
                 $.ajax({
-                    url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+                    url: "<?php echo admin_url(); ?>admin-ajax.php",
                     type: 'POST',
                     data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop&what=tag&value=<?php echo $tag_slug; ?>',
                     success: function (html) {
