@@ -18,22 +18,3 @@ You must have bower installed for installing the requires.
 3- Upload the files there.
 
 4- Make active theme from admin panel.
-
-# Notes
--------
-If you're using multilanguage, you must hardcode thi admin url at pages ajax request.
-Because of admin url will be like http://yourwebsite.com/tr/wp-admin/. For example an index.php;
-
-function loadArticle(pageNumber){
-            $('a#inifiniteLoader').show('fast');
-            $.ajax({
-                **url: "http://yourwebsite.com/wp-admin/admin-ajax.php",**
-                type:'POST',
-                data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
-                success: function (html) {
-                    $('li#inifiniteLoader').hide('1000');
-                    $("ul.timeline").append(html);
-                }
-            });
-            return false;
-        }
