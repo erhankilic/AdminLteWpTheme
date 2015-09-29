@@ -62,6 +62,11 @@
                         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> Bar</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav header-mobile-menu">
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> Bar</a>
+                    </li>
+                </ul>
             </div>
 
         </nav>
