@@ -35,15 +35,79 @@
                                 <div class="post-content">
                                     <?php the_content();?>
                                 </div>
+                                <div class="author-info">
+                                    <h3 class="author-heading">Published by</h3>
+
+                                    <div class="author-description">
+                                        <div class="author-avatar">
+                                            <?php
+                                            $author_bio_avatar_size = apply_filters( 'twentyfifteen_author_bio_avatar_size', 56 );
+                                            echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
+                                            ?>
+                                        </div><!-- .author-avatar -->
+                                        <h3 class="author-title"><?php echo get_the_author(); ?></h3>
+
+                                        <p class="author-bio">
+                                            <?php the_author_meta( 'description' ); ?>
+                                        </p><!-- .author-bio -->
+                                        <p>
+                                            <a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+                                                <?php printf( __( 'View all posts by %s', 'twentyfifteen' ), get_the_author() ); ?>
+                                            </a>
+                                        </p>
+
+                                    </div><!-- .author-description -->
+                                </div><!-- .author-info -->
                                 <ul class="list-inline">
                                     <li>
                                         <i class="fa fa-user margin-r-5"></i>
-                                        <a href="<?php bloginfo('url'); ?>/author/<?php the_author(); ?>" class="text-sm">
+                                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="text-sm">
                                             <?php the_author(); ?>
                                         </a>
                                     </li>
                                     <li><i class="fa fa-folder-open margin-r-5"></i> <?php the_category(', ') ?></li>
                                     <li class="pull-right"><i class="fa fa-comments-o margin-r-5"></i> Comments (<?php comments_number('0', '1', '%' );?>)</li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <i class="fa fa-share"></i> Share
+                                    </li>
+                                    <li>
+                                        <div id="fb-root"></div>
+                                        <script>(function(d, s, id) {
+                                                var js, fjs = d.getElementsByTagName(s)[0];
+                                                if (d.getElementById(id)) return;
+                                                js = d.createElement(s); js.id = id;
+                                                js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.4";
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                            }(document, 'script', 'facebook-jssdk'));</script>
+                                        <div class="fb-share-button" data-href="<?php the_permalink() ?>" data-layout="button_count"></div>
+                                    </li>
+                                    <li>
+                                        <div style="display:inline-block;vertical-align:top">
+                                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>"><i class="fa fa-twitter-square fa-2x"></i> Tweet</a>
+                                            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+                                            </script>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="display:inline-block;vertical-align:top">
+                                            <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
+                                            <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="display:inline-block;vertical-align:top">
+                                            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                                            <script type="IN/Share" data-counter="right"></script>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="display:inline-block;vertical-align:top">
+                                            <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                            <a class="g-plusone" data-size="medium" data-href="<?php the_permalink() ?>"></a>
+                                        </div>
+                                    </li>
                                 </ul>
                                 <?php
                                 // If comments are open or we have at least one comment, load up the comment template

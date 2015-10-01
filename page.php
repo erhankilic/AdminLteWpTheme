@@ -28,6 +28,47 @@
                                     <div class="post-content">
                                         <?php the_content();?>
                                     </div>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <i class="fa fa-share"></i> Share
+                                        </li>
+                                        <li>
+                                            <div id="fb-root"></div>
+                                            <script>(function(d, s, id) {
+                                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                                    if (d.getElementById(id)) return;
+                                                    js = d.createElement(s); js.id = id;
+                                                    js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.4";
+                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                }(document, 'script', 'facebook-jssdk'));</script>
+                                            <div class="fb-share-button" data-href="<?php the_permalink() ?>" data-layout="button_count"></div>
+                                        </li>
+                                        <li>
+                                            <div style="display:inline-block;vertical-align:top">
+                                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>"><i class="fa fa-twitter-square fa-2x"></i> Tweet</a>
+                                                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+                                                </script>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="display:inline-block;vertical-align:top">
+                                                <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
+                                                <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="display:inline-block;vertical-align:top">
+                                                <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                                                <script type="IN/Share" data-counter="right"></script>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="display:inline-block;vertical-align:top">
+                                                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                                <a class="g-plusone" data-size="medium" data-href="<?php the_permalink() ?>"></a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <!-- /.post -->
                             <?php endwhile; ?>

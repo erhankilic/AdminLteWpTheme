@@ -12,6 +12,12 @@
     padding: 15px;
 }
 
+.logo-lg {
+    margin: 0;
+    font-size: 25px;
+    line-height: 50px;
+}
+
 #right-bar .tab-content ul {
     list-style: none;
     padding: 0;
@@ -91,10 +97,17 @@
 #post .post-content .aligncenter{
     text-align: center;
     margin: 0 auto;
+    display: block;
 }
 #post .side-bar ul {
     padding-left: 0;
     list-style-type: none;
+}
+#post .author-info .author-description .author-avatar,
+#post .author-info .author-description h3
+{
+    display: inline-block;
+    margin: 5px;
 }
 #post ol.commentlist {
     padding-left: 0;
