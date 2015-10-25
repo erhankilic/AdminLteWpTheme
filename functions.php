@@ -137,3 +137,16 @@ function wp_infinitepaginate(){
 }
 add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate');           // for logged in user
 add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if user not logged in
+
+// Theme Admin Panel
+if ( STYLESHEETPATH == TEMPLATEPATH ) {
+    define('OF_FILEPATH', TEMPLATEPATH);
+    define('OF_DIRECTORY', get_bloginfo('template_directory'));
+} else {
+    define('OF_FILEPATH', STYLESHEETPATH);
+    define('OF_DIRECTORY', get_bloginfo('stylesheet_directory'));
+}
+require_once (OF_FILEPATH . '/admin/admin-functions.php');
+require_once (OF_FILEPATH . '/admin/admin-interface.php');
+require_once (OF_FILEPATH . '/admin/theme-options.php');
+require_once (OF_FILEPATH . '/admin/theme-functions.php');

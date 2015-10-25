@@ -85,7 +85,7 @@
                                     </li>
                                     <li>
                                         <div style="display:inline-block;vertical-align:top">
-                                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>"><i class="fa fa-twitter-square fa-2x"></i> Tweet</a>
+                                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>"> Tweet</a>
                                             <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
                                             </script>
                                         </div>
@@ -101,6 +101,9 @@
                                             <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
                                             <script type="IN/Share" data-counter="right"></script>
                                         </div>
+                                    </li>
+                                    <li>
+                                        <a href="//www.reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"> <img src="//www.redditstatic.com/spreddit7.gif" alt="submit to reddit" border="0" /> </a>
                                     </li>
                                     <li>
                                         <div style="display:inline-block;vertical-align:top">

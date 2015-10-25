@@ -75,6 +75,37 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <?php if(get_option('panel') == 'true') : ?>
+                    <div class="pull-left image">
+                        <img src="<?php echo get_option('logo'); ?>" class="img-circle" alt="<?php bloginfo('name'); ?>">
+                    </div>
+                    <div class="pull-left info">
+                        <p><?php echo get_option('info'); ?></p>
+                        <ul class="list-unstyled list-inline">
+                            <?php if(get_option('facebook') != '') : ?>
+                                <li><a href="<?php echo get_option('facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <?php endif; ?>
+                            <?php if(get_option('twitter') != '') : ?>
+                                <li><a href="<?php echo get_option('twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <?php endif; ?>
+                            <?php if(get_option('google-plus') != '') : ?>
+                                <li><a href="<?php echo get_option('google-plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <?php endif; ?>
+                            <?php if(get_option('pinterest') != '') : ?>
+                                <li><a href="<?php echo get_option('pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                            <?php endif; ?>
+                            <?php if(get_option('instagram') != '') : ?>
+                                <li><a href="<?php echo get_option('instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <?php endif; ?>
+                            <?php if(get_option('linkedin') != '') : ?>
+                                <li><a href="<?php echo get_option('linkedin'); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+            </div>
             <!-- search form -->
             <form action="<?php bloginfo('url'); ?>" method="get" class="sidebar-form">
                 <div class="input-group">

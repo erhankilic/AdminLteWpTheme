@@ -112,13 +112,13 @@ $tag_slug = $tag->slug;
             });
 
             function loadArticle(pageNumber) {
-                $('a#inifiniteLoader').show('fast');
+                $('#inifiniteLoader').show();
                 $.ajax({
                     url: "<?php echo admin_url(); ?>admin-ajax.php",
                     type: 'POST',
                     data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop&what=tag&value=<?php echo $tag_slug; ?>',
                     success: function (html) {
-                        $('li#inifiniteLoader').hide('1000');
+                        $('#inifiniteLoader').hide('1000');
                         $("ul.timeline").append(html);
                     }
                 });

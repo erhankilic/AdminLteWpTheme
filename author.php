@@ -111,13 +111,13 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             });
 
             function loadArticle(pageNumber) {
-                $('a#inifiniteLoader').show('fast');
+                $('#inifiniteLoader').show();
                 $.ajax({
                     url: "<?php echo admin_url(); ?>admin-ajax.php",
                     type: 'POST',
                     data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop&what=author_name&value=<?php echo $curauth->user_nicename; ?>',
                     success: function (html) {
-                        $('li#inifiniteLoader').hide('1000');
+                        $('#inifiniteLoader').hide('1000');
                         $("ul.timeline").append(html);
                     }
                 });

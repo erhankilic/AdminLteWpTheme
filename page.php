@@ -63,6 +63,9 @@
                                             </div>
                                         </li>
                                         <li>
+                                            <a href="//www.reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"> <img src="//www.redditstatic.com/spreddit7.gif" alt="submit to reddit" border="0" /> </a>
+                                        </li>
+                                        <li>
                                             <div style="display:inline-block;vertical-align:top">
                                                 <script src="https://apis.google.com/js/platform.js" async defer></script>
                                                 <a class="g-plusone" data-size="medium" data-href="<?php the_permalink() ?>"></a>
