@@ -239,6 +239,38 @@ if (!function_exists('of_options')) {
             'std' => '',
             'type' => 'text');
 
+        $options[] = array(
+            "name" => "Advertisement Settings",
+            "type" => "heading");
+
+        $options[] = array(
+            'name' => __('Header Ad', 'options_check'),
+            'desc' => __('Header Ad Code.', 'options_check'),
+            'id' => 'ad_header',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
+            'name' => __('Menu Ad', 'options_check'),
+            'desc' => __('Menu Ad Code.', 'options_check'),
+            'id' => 'ad_menu',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
+            'name' => __('Loop Ad', 'options_check'),
+            'desc' => __('Loop Ad Code. This will be shown at each post group loaded to the timeline.', 'options_check'),
+            'id' => 'ad_loop',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
+            'name' => __('Footer Ad', 'options_check'),
+            'desc' => __('Footer Ad Code.', 'options_check'),
+            'id' => 'ad_footer',
+            'std' => '',
+            'type' => 'textarea');
+
         update_option('of_template', $options);
         update_option('of_themename', $themename);
         update_option('of_shortname', $shortname);

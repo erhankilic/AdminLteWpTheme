@@ -6,6 +6,11 @@
 
         <!-- row -->
         <div class="row">
+            <?php if(get_option('ad_header') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_header')); ?>
+                </div>
+            <?php endif; ?>
             <?php if (get_option('carousel_check') == 'true') : ?>
                 <div class="col-md-<?php echo get_option('carousel_width'); ?>">
                     <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -193,6 +198,11 @@
                 </ul>
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
+            <?php if(get_option('ad_footer') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_footer')); ?>
+                </div>
+            <?php endif; ?>
             <!-- /.col -->
         </div>
         <!-- /.row -->

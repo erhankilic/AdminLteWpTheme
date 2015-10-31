@@ -19,6 +19,11 @@ $yourcat = get_category ($cat);
 
         <!-- row -->
         <div class="row">
+            <?php if(get_option('ad_header') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_header')); ?>
+                </div>
+            <?php endif; ?>
             <div class="col-md-12">
                 <!-- The time line -->
                 <ul class="timeline">
@@ -87,7 +92,11 @@ $yourcat = get_category ($cat);
                 </ul>
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
-            <!-- /.col -->
+            <?php if(get_option('ad_footer') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_footer')); ?>
+                </div>
+            <?php endif; ?>
         </div>
         <!-- /.row -->
 

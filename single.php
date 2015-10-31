@@ -16,6 +16,11 @@
         <section class="content" id="post">
 
             <div class="row">
+                <?php if(get_option('ad_header') != '') : ?>
+                    <div class="col-md-12">
+                        <?php echo stripslashes(get_option('ad_header')); ?>
+                    </div>
+                <?php endif; ?>
                 <div class="col-md-3 side-bar">
 
                     <?php dynamic_sidebar('Side Bar'); ?>
@@ -146,7 +151,11 @@
                     </div>
                     <!-- /.box -->
                 </div>
-                <!-- /.col -->
+                <?php if(get_option('ad_footer') != '') : ?>
+                    <div class="col-md-12">
+                        <?php echo stripslashes(get_option('ad_footer')); ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <!-- /.row -->
 

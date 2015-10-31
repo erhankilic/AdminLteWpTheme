@@ -1,4 +1,16 @@
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
+    <?php if(get_option('ad_loop') != '') : ?>
+        <li>
+            <i class="fa fa-bookmark-o bg-blue"></i>
+
+            <div class="timeline-item">
+                <div class="timeline-body">
+                    <?php echo stripslashes(get_option('ad_loop')); ?>
+                </div>
+            </div>
+        </li>
+    <?php endif; ?>
+    <?php while (have_posts()) : the_post(); ?>
     <!-- timeline time label -->
     <li class="time-label">
         <span class="bg-green"><?php the_time('d.m.Y ') ?></span>
@@ -41,9 +53,4 @@
     </li>
     <!-- END timeline item -->
 <?php endwhile; ?>
-    <?php else : ?>
-                </ul>
-                <div class="error-page">
-                    <h3><i class="fa fa-warning text-yellow"></i> Oops! There is no article to show!</h3>
-                </div><!-- /.error-page -->
 <?php endif; ?>

@@ -2,19 +2,11 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                404 Error Page
-            </h1>
-            <ol class="breadcrumb">
-                <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
-                <li class="active">404</li>
-            </ol>
-        </section>
-
         <!-- Main content -->
         <section class="content">
+            <?php if(get_option('ad_header') != '') : ?>
+                <?php echo stripslashes(get_option('ad_header')); ?>
+            <?php endif; ?>
             <div class="error-page">
                 <h2 class="headline text-yellow"> 404</h2>
                 <div class="error-content">
@@ -33,6 +25,9 @@
                     </form>
                 </div><!-- /.error-content -->
             </div><!-- /.error-page -->
+            <?php if(get_option('ad_footer') != '') : ?>
+                <?php echo stripslashes(get_option('ad_footer')); ?>
+            <?php endif; ?>
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

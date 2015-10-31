@@ -19,6 +19,11 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         <!-- row -->
         <div class="row">
+            <?php if(get_option('ad_header') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_header')); ?>
+                </div>
+            <?php endif; ?>
             <div class="col-md-12">
                 <!-- The time line -->
                 <ul class="timeline">
@@ -87,7 +92,11 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 </ul>
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
-            <!-- /.col -->
+            <?php if(get_option('ad_footer') != '') : ?>
+                <div class="col-md-12">
+                    <?php echo stripslashes(get_option('ad_footer')); ?>
+                </div>
+            <?php endif; ?>
         </div>
         <!-- /.row -->
 
