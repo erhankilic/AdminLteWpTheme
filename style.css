@@ -149,3 +149,47 @@
         display: block !important;
     }
 }
+
+.content .box {
+    margin-bottom: 15px;
+}
+
+#feed,
+#accordion{
+    max-height: 300px;
+    overflow: auto;
+}
+
+#feed .gha-header {
+    width: 99.8% !important;
+}
+
+#feed .gha-footer {
+    display: none;
+}
+
+#carousel {
+    margin-bottom: 15px;
+}
+
+#carousel img{
+    width: 100%;
+    max-height: 500px;
+}
+
+.carousel-caption {
+    background-color: rgba(255,255,255,0.7);
+    padding:10px;
+    bottom:0;
+    right:0;
+    left:0;
+    width:100% ;
+}
+.carousel-indicators {
+    display:none;
+}
+.carousel-caption a{
+    color:#1c4365;
+    text-shadow: none;
+    font-weight:700;
+}
