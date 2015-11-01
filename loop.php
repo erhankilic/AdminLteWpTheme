@@ -5,7 +5,16 @@
 
             <div class="timeline-item">
                 <div class="timeline-body">
-                    <?php echo stripslashes(get_option('ad_loop')); ?>
+                    <?php if(get_option('ad_footer') != '') : ?>
+                        <div class="hidden-xs hidden-sm ad">
+                            <?php echo stripslashes(get_option('ad_footer')); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if(get_option('ad_footer_mobile') != '') : ?>
+                        <div class="visible-xs visible-sm ad">
+                            <?php echo stripslashes(get_option('ad_footer_mobile')); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </li>

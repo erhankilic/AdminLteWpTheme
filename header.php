@@ -130,7 +130,9 @@
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <?php wp_nav_menu(array('theme_location' => 'sidebar', 'menu_class' => 'sidebar-menu', 'walker' => new Sidebar_Nav_Menu())); ?>
-            <?php if(get_option('ad_menu') != '') { echo stripslashes(get_option('ad_menu')); } ?>
+            <div class="ad">
+                <?php if(get_option('ad_menu') != '') { echo stripslashes(get_option('ad_menu')); } ?>
+            </div>
         </section>
         <!-- /.sidebar -->
     </aside>

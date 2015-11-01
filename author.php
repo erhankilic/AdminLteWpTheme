@@ -20,8 +20,13 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <!-- row -->
         <div class="row">
             <?php if(get_option('ad_header') != '') : ?>
-                <div class="col-md-12">
+                <div class="col-md-12 hidden-xs hidden-sm ad">
                     <?php echo stripslashes(get_option('ad_header')); ?>
+                </div>
+            <?php endif; ?>
+            <?php if(get_option('ad_header_mobile') != '') : ?>
+                <div class="col-md-12 visible-xs visible-sm ad">
+                    <?php echo stripslashes(get_option('ad_header_mobile')); ?>
                 </div>
             <?php endif; ?>
             <div class="col-md-12">
@@ -93,8 +98,13 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
             <?php if(get_option('ad_footer') != '') : ?>
-                <div class="col-md-12">
+                <div class="col-md-12 hidden-xs hidden-sm ad">
                     <?php echo stripslashes(get_option('ad_footer')); ?>
+                </div>
+            <?php endif; ?>
+            <?php if(get_option('ad_footer_mobile') != '') : ?>
+                <div class="col-md-12 visible-xs visible-sm ad">
+                    <?php echo stripslashes(get_option('ad_footer_mobile')); ?>
                 </div>
             <?php endif; ?>
         </div>

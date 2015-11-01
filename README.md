@@ -4,7 +4,7 @@ Admin Lte Wordpress Theme
 
 **AdminLteWpTheme** is a wordpress theme based on **[AdminLTE](https://github.com/almasaeed2010/AdminLTE)**.
 
-**Live Preview on [Idea Software](https://ideayazilim.net)**
+**Live Preview on [Erhan Kılıç](https://erhankilic.org)**
 
 # Installing
 ------------

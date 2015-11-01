@@ -193,3 +193,12 @@
     text-shadow: none;
     font-weight:700;
 }
+
+.menu-menu-container {
+    margin-bottom: 25px;
+}
+
+.ad {
+    text-align: center;
+    padding: 10px;
+}

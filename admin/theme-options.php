@@ -251,8 +251,15 @@ if (!function_exists('of_options')) {
             'type' => 'textarea');
 
         $options[] = array(
+            'name' => __('Header Ad Mobile', 'options_check'),
+            'desc' => __('Header Ad Mobile Code. It\'ll be shown in mobile.', 'options_check'),
+            'id' => 'ad_header_mobile',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
             'name' => __('Menu Ad', 'options_check'),
-            'desc' => __('Menu Ad Code.', 'options_check'),
+            'desc' => __('Menu Ad Code. Width must be maximum 220px.', 'options_check'),
             'id' => 'ad_menu',
             'std' => '',
             'type' => 'textarea');
@@ -265,9 +272,23 @@ if (!function_exists('of_options')) {
             'type' => 'textarea');
 
         $options[] = array(
+            'name' => __('Loop Ad Mobile', 'options_check'),
+            'desc' => __('Loop Ad Mobile Code. This will be shown at each post group loaded to the timeline in mobile.', 'options_check'),
+            'id' => 'ad_loop_mobile',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
             'name' => __('Footer Ad', 'options_check'),
             'desc' => __('Footer Ad Code.', 'options_check'),
             'id' => 'ad_footer',
+            'std' => '',
+            'type' => 'textarea');
+
+        $options[] = array(
+            'name' => __('Footer Ad Mobile', 'options_check'),
+            'desc' => __('Footer Ad Mobile Code. It\'ll be shown in mobile.', 'options_check'),
+            'id' => 'ad_footer_mobile',
             'std' => '',
             'type' => 'textarea');
 

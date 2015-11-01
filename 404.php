@@ -5,7 +5,14 @@
         <!-- Main content -->
         <section class="content">
             <?php if(get_option('ad_header') != '') : ?>
-                <?php echo stripslashes(get_option('ad_header')); ?>
+                <div class="col-md-12 hidden-xs hidden-sm ad">
+                    <?php echo stripslashes(get_option('ad_header')); ?>
+                </div>
+            <?php endif; ?>
+            <?php if(get_option('ad_header_mobile') != '') : ?>
+                <div class="col-md-12 visible-xs visible-sm ad">
+                    <?php echo stripslashes(get_option('ad_header_mobile')); ?>
+                </div>
             <?php endif; ?>
             <div class="error-page">
                 <h2 class="headline text-yellow"> 404</h2>
@@ -26,7 +33,14 @@
                 </div><!-- /.error-content -->
             </div><!-- /.error-page -->
             <?php if(get_option('ad_footer') != '') : ?>
-                <?php echo stripslashes(get_option('ad_footer')); ?>
+                <div class="col-md-12 hidden-xs hidden-sm ad">
+                    <?php echo stripslashes(get_option('ad_footer')); ?>
+                </div>
+            <?php endif; ?>
+            <?php if(get_option('ad_footer_mobile') != '') : ?>
+                <div class="col-md-12 visible-xs visible-sm ad">
+                    <?php echo stripslashes(get_option('ad_footer_mobile')); ?>
+                </div>
             <?php endif; ?>
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
