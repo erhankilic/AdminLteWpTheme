@@ -28,6 +28,8 @@
     <![endif]-->
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <!-- jQuery 2.1.4 -->
+    <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
     <?php wp_get_archives('type=monthly&format=link'); ?>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>"/>

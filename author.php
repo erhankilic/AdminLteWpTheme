@@ -50,7 +50,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                                 <div class="timeline-body">
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-4 col-xs-6">
+                                        <div class="col-lg-3 col-sm-4">
                                             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                 <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
 
@@ -59,7 +59,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                                                 <?php } ?>
                                             </a>
                                         </div>
-                                        <div class="col-lg-9 col-sm-8 col-xs-6">
+                                        <div class="col-lg-9 col-sm-8">
                                             <?php the_excerpt_rss(); ?>
                                             <div style="margin-top: 10px">
                                                 <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">Read more</a>

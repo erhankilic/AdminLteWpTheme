@@ -1,23 +1,26 @@
 /*
 	Theme Name: Admin LTE Wordpress Theme
-	Description: Made by <a href="http://www.ideayazilim.net">Erhan Kılıç</a> for wordpress.
-	Theme URI: http://www.ideayazilim.net
+	Description: Made by <a href="http://www.erhankilic.org">Erhan Kılıç</a> for wordpress.
+	Theme URI: http://www.erhankilic.org
 	Version: 1.0
 	Author: Erhan Kılıç
-	Author URI: http://www.ideayazilim.net
-	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, kişisel blog teması, erhan kılıç
+	Author URI: http://www.erhankilic.org
+	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, erhan kılıç
 */
 
+/***** Heder *****/
 .content-header {
     padding: 15px;
 }
 
+/***** Logo *****/
 .logo-lg {
     margin: 0;
     font-size: 25px;
     line-height: 50px;
 }
 
+/*****  Right Bar  *****/
 #right-bar .tab-content ul {
     list-style: none;
     padding: 0;
@@ -70,11 +73,13 @@
     margin: 0;
 }
 
+/***** Loader *****/
 #inifiniteLoader {
     text-align: center;
     display: none;
 }
 
+/**** Posts *****/
 #post .description {
     margin-bottom: 10px;
 }
@@ -135,25 +140,18 @@
     height: 200px;
 }
 #post ul.users-list li img {
-    max-height: 150px;
+    height: 150px;
     margin: 0 auto;
 }
 .header-mobile-menu {
     display: none;
-}
-@media (max-width: 767px) {
-    .navbar-custom-menu .navbar-nav {
-        display: none;
-    }
-    .header-mobile-menu {
-        display: block !important;
-    }
 }
 
 .content .box {
     margin-bottom: 15px;
 }
 
+/***** Feed & Accordion *****/
 #feed,
 #accordion{
     max-height: 300px;
@@ -168,13 +166,14 @@
     display: none;
 }
 
+/***** Carousel *****/
 #carousel {
     margin-bottom: 15px;
 }
 
 #carousel img{
     width: 100%;
-    max-height: 500px;
+    height: 500px;
 }
 
 .carousel-caption {
@@ -201,4 +200,25 @@
 .ad {
     text-align: center;
     padding: 10px;
+}
+
+pre {
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .navbar-custom-menu .navbar-nav {
+        display: none;
+    }
+    .header-mobile-menu {
+        display: block !important;
+    }
+
+    #post ul.users-list li {
+        width: 50%;
+    }
+
+    #carousel img{
+        height: 300px;
+    }
 }
