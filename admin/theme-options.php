@@ -40,6 +40,9 @@ if (!function_exists('of_options')) {
 // Number of featured posts to display
         $featured_options_select = array("2", "4", "6", "8", "10", "12");
 
+// Column Width Options
+        $widths = array("1","2","3","4","5","6","7","8","9","10","11","12");
+
 //Stylesheets Reader
         $alt_stylesheet_path = OF_FILEPATH . '/styles/';
         $alt_stylesheets = array();
@@ -159,7 +162,8 @@ if (!function_exists('of_options')) {
             'desc' => __('You can set the Carousel Slider\'s feed. You can enter 1 to 12. 12 is full width.', 'options_check'),
             'id' => 'carousel_width',
             'std' => '12',
-            'type' => 'text');
+            'type' => 'select',
+            'options' => $widths);
 
         $options[] = array(
             'name' => __('Do you want Collapsible Accordion?', 'options_check'),
@@ -195,7 +199,8 @@ if (!function_exists('of_options')) {
             'desc' => __('You can set the Collapsible Accordion\'s feed. You can enter 1 to 12. 12 is full width.', 'options_check'),
             'id' => 'accordion_width',
             'std' => '12',
-            'type' => 'text');
+            'type' => 'select',
+            'options' => $widths);
 
         $options[] = array(
             'name' => __('Do you want GitHub Activity Feed?', 'options_check'),
@@ -236,8 +241,20 @@ if (!function_exists('of_options')) {
             'name' => __('GitHub Activity Feed Width', 'options_check'),
             'desc' => __('You can set the GitHubb Activity Feed\'s feed. You can enter 1 to 12. 12 is full width.', 'options_check'),
             'id' => 'github_width',
+            'std' => '12',
+            'type' => 'select',
+            'options' => $widths);
+
+        $options[] = array(
+            "name" => "Footer Settings",
+            "type" => "heading");
+
+        $options[] = array(
+            'name' => __('Footer Text', 'options_check'),
+            'desc' => __('You can set the Footer text.', 'options_check'),
+            'id' => 'footer_text',
             'std' => '',
-            'type' => 'text');
+            'type' => 'textarea');
 
         $options[] = array(
             "name" => "Advertisement Settings",

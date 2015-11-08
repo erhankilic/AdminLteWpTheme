@@ -50,19 +50,23 @@ $yourcat = get_category ($cat);
 
                                 <div class="timeline-body">
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-4">
-                                            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                                <?php $resim_yolu = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); if ( has_post_thumbnail() ) { ?>
+                                        <div class="col-lg-3 col-sm-5">
+                                            <div class="caption">
+                                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                                    <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+                                                    if (has_post_thumbnail()) { ?>
 
-                                                    <img src="<?php echo $resim_yolu[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
+                                                        <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
 
-                                                <?php } ?>
-                                            </a>
+                                                    <?php } ?>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-9 col-sm-8">
+                                        <div class="col-lg-9 col-sm-7">
                                             <?php the_excerpt_rss(); ?>
                                             <div style="margin-top: 10px">
-                                                <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">Read more</a>
+                                                <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>"
+                                                   title="<?php the_title(); ?>">Read more</a>
                                             </div>
                                         </div>
                                     </div>

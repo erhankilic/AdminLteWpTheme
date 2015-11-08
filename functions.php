@@ -100,14 +100,14 @@ function wp_nav_menu_no_ul()
 //Register Sidebars
 register_sidebar(array(
     'name' => 'Right Bar',
-    'before_widget' => '<div>',
+    'before_widget' => '<div class="right-bar-widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3 class="control-sidebar-heading">',
     'after_title' => '</h3>',
 ));
 register_sidebar(array(
     'name' => 'Side Bar',
-    'before_widget' => '<div class="box box-primary"><div class="box-body">',
+    'before_widget' => '<div class="box box-primary side-bar-widget"><div class="box-body">',
     'after_widget' => '</div></div>',
     'before_title' => '<h3 class="profile-username text-center">',
     'after_title' => '</h3>',

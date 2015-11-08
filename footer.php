@@ -1,8 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>"
-                                                         alt="<?php bloginfo('name'); ?>"
-                                                         title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>.</strong>
-    All rights reserved.
+    <?php echo get_option('footer_text'); ?>
 </footer>
 
 <!-- Control Sidebar -->

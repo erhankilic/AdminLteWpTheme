@@ -32,10 +32,11 @@
                                         <?php $carousel = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
                                         if (has_post_thumbnail()) { ?>
 
-                                            <img src="<?php echo $carousel[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                                            <img src="<?php echo $carousel[0]; ?>" class="img-responsive"
+                                                 alt="<?php the_title(); ?>" title="<?php the_title() ?>" />
 
                                         <?php } ?>
-                                        <div class="carousel-caption">
+                                            <div class="carousel-caption">
                                             <a href="<?php the_permalink() ?>">
                                                 <?php the_excerpt_rss(); ?>
                                             </a>
@@ -144,17 +145,19 @@
 
                                 <div class="timeline-body">
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-4">
-                                            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
-                                                if (has_post_thumbnail()) { ?>
+                                        <div class="col-lg-3 col-sm-5">
+                                            <div class="caption">
+                                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                                    <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+                                                    if (has_post_thumbnail()) { ?>
 
-                                                    <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                                                        <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
 
-                                                <?php } ?>
-                                            </a>
+                                                    <?php } ?>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-9 col-sm-8">
+                                        <div class="col-lg-9 col-sm-7">
                                             <?php the_excerpt_rss(); ?>
                                             <div style="margin-top: 10px">
                                                 <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>"
