@@ -103,7 +103,7 @@ register_sidebar(array(
 ));
 register_sidebar(array(
     'name' => 'Side Bar',
-    'before_widget' => '<div class="box box-primary side-bar-widget"><div class="box-body">',
+    'before_widget' => '<div class="box box-widget side-bar-widget"><div class="box-body">',
     'after_widget' => '</div></div>',
     'before_title' => '<h3 class="profile-username text-center">',
     'after_title' => '</h3>',

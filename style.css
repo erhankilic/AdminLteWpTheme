@@ -9,6 +9,9 @@
 */
 
 /***** Heder *****/
+.fixed .content-wrapper {
+    padding-top: 10px;
+}
 .content-header {
     padding: 15px;
 }
@@ -80,6 +83,14 @@
 }
 
 /**** Posts *****/
+#post .box.box-widget>.box-header>.user-block img {
+    width: auto;
+    height: auto;
+    float: none;
+}
+#post .box.box-widget>.box-header>.user-block>.description {
+    margin-left: 0;
+}
 #post .description {
     margin-bottom: 10px;
 }
@@ -152,29 +163,21 @@
 #post ol.commentlist .comment-meta {
     float: right;
 }
-#post ul.users-list li {
+#post .related-articles {
+    margin-top: 15px;
+}
+#post .related-articles div {
     height: 225px;
     overflow: hidden;
 }
-#post ul.users-list li .caption {
+#post .related-articles div .caption {
     height: 150px;
     overflow: hidden;
     position: relative;
 }
-#post ul.users-list li .caption img {
+#post .related-articles div .caption img {
     height: 150px;
     margin: 0 auto;
-    -webkit-transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    transition: all 0.7s ease-in-out;
-}
-
-#post ul.users-list li .caption img:hover {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
 }
 
 .header-mobile-menu {
@@ -307,10 +310,6 @@ pre {
     }
     .header-mobile-menu {
         display: block !important;
-    }
-
-    #post ul.users-list li {
-        width: 50%;
     }
 
     #carousel img{
