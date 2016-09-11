@@ -4,9 +4,6 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
             <ol class="breadcrumb">
                 <?php breadcrums() ?>
             </ol>

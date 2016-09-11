@@ -1,9 +1,20 @@
 {
-  "name": "İdea Yazılım",
-  "description": "İdea Yazılım Wordpress Tema",
-  "version": "1",
-  "homepage": "https://ideayazilim.net",
+  "name": "admin lte wordpress Theme",
+  "homepage": "https://github.com/erhankilic/AdminLteWpTheme",
+  "description": "Admin Lte Wordpress Theme",
+  "main": "",
+  "keywords": [
+    "wordpress",
+    "admin",
+    "lte",
+    "admin",
+    "adminlte"
+  ],
+  "authors": [
+    "Erhan Kılıc"
+  ],
+  "license": "MIT",
   "dependencies": {
-    "AdminLTE": "admin-lte#~2.3.0"
+    "AdminLTE": "adminlte#^2.3.6"
   }
 }

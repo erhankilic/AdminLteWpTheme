@@ -8,14 +8,10 @@ register_nav_menu('headermenu', 'Header Menu');
 
 /* Breadcrums Function */
 function breadcrums() {
-    if (!is_home()) {
+    if (!is_home() && !is_category()) {
         echo '<li><i class="fa fa-dashboard"></i> ';
         bloginfo('name');
-        echo '</li><li  class="active">';
-        if (is_category()) {
-            echo the_category('title_li=');
-        }
-        elseif (is_single()) {
+        echo '</li><li  class="active">';if (is_single()) {
             echo get_the_title();
         }
 

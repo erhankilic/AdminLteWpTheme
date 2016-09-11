@@ -15,7 +15,19 @@
 <div class="control-sidebar-bg"></div>
 
 </div><!-- ./wrapper -->
-
+<!-- Bootstrap 3.3.5 -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/skins/skin-purple.min.css">
+<?php if (get_option('github_check') == 'true') : ?>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/github-activity-master/src/github-activity.css">
+<?php endif; ?>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 <!-- Bootstrap 3.3.5 -->
 <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->

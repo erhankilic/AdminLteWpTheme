@@ -4,9 +4,6 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
             <ol class="breadcrumb">
                 <?php breadcrums() ?>
             </ol>
@@ -26,11 +23,6 @@
                         <?php echo stripslashes(get_option('ad_header_mobile')); ?>
                     </div>
                 <?php endif; ?>
-                <div class="col-md-3 side-bar hidden-xs hidden-sm">
-
-                    <?php dynamic_sidebar('Side Bar'); ?>
-
-                </div>
                 <!-- /.col -->
                 <div class="col-md-9">
                     <div class="box box-primary">
@@ -157,6 +149,11 @@
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
+                </div>
+                <div class="col-md-3 side-bar hidden-xs hidden-sm">
+
+                    <?php dynamic_sidebar('Side Bar'); ?>
+
                 </div>
                 <?php if(get_option('ad_footer') != '') : ?>
                     <div class="col-md-12 hidden-xs hidden-sm ad">
