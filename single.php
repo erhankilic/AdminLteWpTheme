@@ -70,6 +70,30 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
+                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), array(1000,1000)); ?>
+                                <div class="box box-widget">
+                                    <div class="box-body box-profile">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                                        <?php else : ?>
+                                            <img src="<?php bloginfo('template_url'); ?>/assets/img/default.jpg" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                                        <?php endif ?>
+                                        <a class="author-link"
+                                           href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+                                           rel="author">
+                                            <img class="profile-user-img img-responsive img-circle" src="<?php
+                                            $author_bio_avatar_size = apply_filters('twentyfifteen_author_bio_avatar_size', 56);
+                                            echo get_avatar_url(get_the_author_meta('user_email'), $author_bio_avatar_size);
+                                            ?>" alt="User profile picture">
+
+                                            <h3 class="profile-username text-center"><?php echo get_the_author(); ?></h3>
+
+                                            <p class="text-muted text-center"><?php the_author_meta('description'); ?></p>
+                                        </a>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
                                 <div class="post-content">
                                     <?php the_content(); ?>
                                 </div>
@@ -141,26 +165,7 @@
                 </div>
 
                 <div class="col-md-3 side-bar hidden-xs hidden-sm">
-                    <div class="box box-widget">
-                        <div class="box-body box-profile">
-                            <a class="author-link"
-                               href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
-                               rel="author">
-                                <img class="profile-user-img img-responsive img-circle" src="<?php
-                                $author_bio_avatar_size = apply_filters('twentyfifteen_author_bio_avatar_size', 56);
-                                echo get_avatar_url(get_the_author_meta('user_email'), $author_bio_avatar_size);
-                                ?>" alt="User profile picture">
-
-                                <h3 class="profile-username text-center"><?php echo get_the_author(); ?></h3>
-
-                                <p class="text-muted text-center"><?php the_author_meta('description'); ?></p>
-                            </a>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
                     <?php dynamic_sidebar('Side Bar'); ?>
-
                 </div>
 
                 <?php if (get_option('ad_footer') != '') : ?>

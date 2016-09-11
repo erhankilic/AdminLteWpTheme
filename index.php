@@ -236,5 +236,7 @@
             selector: "#feed"
         });
     </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/github-activity-master/src/github-activity.css">
 <?php endif; ?>
 <?php get_footer(); ?>
