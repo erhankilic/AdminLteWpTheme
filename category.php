@@ -13,7 +13,8 @@ $yourcat = get_category ($cat);
                 "<?php echo single_cat_title(); ?>"
             </h1>
             <ol class="breadcrumb">
-                <?php breadcrums() ?>
+                <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
+                <li class="active"><?php echo single_cat_title(); ?></li>
             </ol>
         </section>
 
