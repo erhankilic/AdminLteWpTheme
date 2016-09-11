@@ -1,69 +1,49 @@
 <?php if (have_posts()) : ?>
     <?php if(get_option('ad_loop') != '') : ?>
-        <li>
-            <i class="fa fa-bookmark-o bg-blue"></i>
-
-            <div class="timeline-item">
-                <div class="timeline-body">
-                    <?php if(get_option('ad_footer') != '') : ?>
-                        <div class="hidden-xs hidden-sm ad">
-                            <?php echo stripslashes(get_option('ad_footer')); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if(get_option('ad_footer_mobile') != '') : ?>
-                        <div class="visible-xs visible-sm ad">
-                            <?php echo stripslashes(get_option('ad_footer_mobile')); ?>
-                        </div>
-                    <?php endif; ?>
+        <div class="col-xs-12">
+            <?php if(get_option('ad_footer') != '') : ?>
+                <div class="hidden-xs hidden-sm ad">
+                    <?php echo stripslashes(get_option('ad_footer')); ?>
                 </div>
-            </div>
-        </li>
+            <?php endif; ?>
+            <?php if(get_option('ad_footer_mobile') != '') : ?>
+                <div class="visible-xs visible-sm ad">
+                    <?php echo stripslashes(get_option('ad_footer_mobile')); ?>
+                </div>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
     <?php while (have_posts()) : the_post(); ?>
-    <!-- timeline time label -->
-    <li class="time-label">
-        <span class="bg-green"><?php the_time('d.m.Y ') ?></span>
-    </li>
-    <!-- /.timeline-label -->
-    <!-- timeline item -->
-    <li>
-        <i class="fa fa-newspaper-o bg-blue"></i>
-
-        <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i> <?php the_time('H:i') ?></span>
-
-            <h3 class="timeline-header"><a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a></h3>
-
-            <div class="timeline-body">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-5">
-                        <div class="caption">
-                            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
-                                if (has_post_thumbnail()) { ?>
-
-                                    <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
-
-                                <?php } ?>
-                            </a>
-                        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="box box-widget">
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <span class="username"><a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a></span>
+                        <ul class="description list-inline">
+                            <li><i class="fa fa-calendar"></i> <?php the_time('d.m.Y ') ?> | </li>
+                            <li><i class="fa fa-user"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> | </li>
+                            <li><i class="fa fa-folder-open"></i> <?php the_category(', ') ?> | </li>
+                            <li><i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments'); ?></li>
+                        </ul>
                     </div>
-                    <div class="col-lg-9 col-sm-7">
-                        <?php the_excerpt_rss(); ?>
-                        <div style="margin-top: 10px">
-                            <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>"
-                               title="<?php the_title(); ?>">Read more</a>
-                        </div>
-                    </div>
+                    <!-- /.user-block -->
                 </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="caption">
+                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                            <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+                            if (has_post_thumbnail()) : ?>
+                                <img src="<?php echo $img[0]; ?>" class="img-responsive pad" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                            <?php endif ?>
+                        </a>
+                    </div>
+                    <a   href="<?php the_permalink() ?>"
+                       title="<?php the_title(); ?>"><?php the_excerpt_rss(); ?></a>
+                </div>
+                <!-- /.box-body -->
             </div>
-            <div class="timeline-footer">
-                <p>
-                    <i class="fa fa-user"></i> <a href="<?php bloginfo('url'); ?>/author/<?php the_author(); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> | <i class="fa fa-folder-open"></i> <?php the_category(', ') ?> | <i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments' );?>
-                </p>
-            </div>
+            <!-- /.box -->
         </div>
-    </li>
-    <!-- END timeline item -->
 <?php endwhile; ?>
 <?php endif; ?>

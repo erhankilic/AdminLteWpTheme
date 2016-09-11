@@ -70,7 +70,9 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <?php the_content(); ?>
+                                <div class="post-content">
+                                    <?php the_content(); ?>
+                                </div>
                                 <!-- Social sharing buttons -->
                                 <ul class="list-inline">
                                     <li><i class="fa fa-share"></i> Share</li>

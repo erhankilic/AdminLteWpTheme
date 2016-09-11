@@ -56,15 +56,9 @@
             <?php endif; ?>
             <?php if (get_option('accordion_check') == 'true') : ?>
                 <div class="col-md-<?php echo get_option('accordion_width'); ?>">
-                    <div class="box">
+                    <div class="box box-widget">
                         <div class="box-header with-border">
                             <h3 class="box-title"><?php echo get_option('accordion_title'); ?></h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
-                            </div>
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <div class="box-group" id="accordion">
@@ -76,7 +70,7 @@
                                     while($ali->have_posts()) : $ali->the_post();
                                         $i++;
                                         ?>
-                                        <div class="panel box box-primary">
+                                        <div class="panel box box-widget">
                                             <div class="box-header with-border">
                                                 <h4 class="box-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>">
@@ -102,16 +96,9 @@
             <?php if (get_option('github_check') == 'true') : ?>
                 <div class="col-md-<?php echo get_option('github_width'); ?>">
                     <!-- GitHub Activity Feed -->
-                    <div class="box">
+                    <div class="box box-widget">
                         <div class="box-header with-border">
                             <h3 class="box-title"><?php echo get_option('github_title'); ?></h3>
-
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
-                            </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -123,87 +110,66 @@
                 </div>
             <?php endif; ?>
             <div class="col-md-12">
-                <!-- The time line -->
-                <ul class="timeline">
-
+                <div class="row" id="posts">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <!-- timeline time label -->
-                        <li class="time-label">
-                            <span class="bg-green"><?php the_time('d.m.Y ') ?></span>
-                        </li>
-                        <!-- /.timeline-label -->
-                        <!-- timeline item -->
-                        <li>
-                            <i class="fa fa-newspaper-o bg-blue"></i>
-
-                            <div class="timeline-item">
-                                <span class="time"><i class="fa fa-clock-o"></i> <?php the_time('H:i') ?></span>
-
-                                <h3 class="timeline-header">
-                                    <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a>
-                                </h3>
-
-                                <div class="timeline-body">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-sm-5">
-                                            <div class="caption">
-                                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                                    <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
-                                                    if (has_post_thumbnail()) { ?>
-
-                                                        <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
-
-                                                    <?php } ?>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9 col-sm-7">
-                                            <?php the_excerpt_rss(); ?>
-                                            <div style="margin-top: 10px">
-                                                <a class="btn btn-primary btn-xs" href="<?php the_permalink() ?>"
-                                                   title="<?php the_title(); ?>">Read more</a>
-                                            </div>
-                                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="box box-widget">
+                                <div class="box-header with-border">
+                                    <div class="user-block">
+                                        <span class="username"><a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a></span>
+                                        <ul class="description list-inline">
+                                            <li><i class="fa fa-calendar"></i> <?php the_time('d.m.Y ') ?> | </li>
+                                            <li><i class="fa fa-user"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> | </li>
+                                            <li><i class="fa fa-folder-open"></i> <?php the_category(', ') ?> | </li>
+                                            <li><i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments'); ?></li>
+                                        </ul>
                                     </div>
+                                    <!-- /.user-block -->
                                 </div>
-                                <div class="timeline-footer">
-                                    <p>
-                                        <i class="fa fa-user"></i>
-                                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> |
-                                        <i class="fa fa-folder-open"></i> <?php the_category(', ') ?> |
-                                        <i class="fa fa-comments"></i> <?php comments_number('0 comment', '1 comment', '% comments'); ?>
-                                    </p>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="caption">
+                                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                            <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+                                            if (has_post_thumbnail()) : ?>
+                                                <img src="<?php echo $img[0]; ?>" class="img-responsive pad" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
+                                            <?php endif ?>
+                                        </a>
+                                    </div>
+                                    <a href="<?php the_permalink() ?>"
+                                       title="<?php the_title(); ?>"><?php the_excerpt_rss(); ?></a>
                                 </div>
+                                <!-- /.box-body -->
                             </div>
-                        </li>
-                        <!-- END timeline item -->
+                            <!-- /.box -->
+                        </div>
                     <?php endwhile; ?>
                     <?php else : ?>
-                </ul>
-                <div class="error-page">
-                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Articles not found.</h3>
-
-                    <p>
-                        There is no article.
-                        Meanwhile, you may <a href="<?php bloginfo('url'); ?>">return to home</a> or try using the
-                        search form.
-                    </p>
-
-                    <form action="<?php bloginfo('url'); ?>" class="search-form">
-                        <div class="input-group">
-                            <input type="text" name="s" class="form-control" placeholder="Search">
-
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
-                                </button>
-                            </div>
                         </div>
-                        <!-- /.input-group -->
-                    </form>
+                        <div class="error-page">
+                            <h3><i class="fa fa-warning text-yellow"></i> Oops! Articles not found.</h3>
+
+                            <p>
+                                There is no article.
+                                Meanwhile, you may <a href="<?php bloginfo('url'); ?>">return to home</a> or try using the
+                                search form.
+                            </p>
+
+                            <form action="<?php bloginfo('url'); ?>" class="search-form">
+                                <div class="input-group">
+                                    <input type="text" name="s" class="form-control" placeholder="Search">
+
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.input-group -->
+                            </form>
+                        </div>
+                        <!-- /.error-page -->
+                    <?php endif; ?>
                 </div>
-                <!-- /.error-page -->
-                <?php endif; ?>
-                </ul>
                 <div id="inifiniteLoader"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
             </div>
             <?php if(get_option('ad_footer') != '') : ?>
@@ -247,13 +213,28 @@
                 data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop',
                 success: function (html) {
                     $('#inifiniteLoader').hide('1000');
-                    $("ul.timeline").append(html);
+                    $("#posts").append(html);
                 }
             });
             return false;
         }
-
     });
 </script>
-
+<?php if (get_option('github_check') == 'true') : ?>
+    <!-- GitHub Activity -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/github-activity-master/src/github-activity.js"></script>
+    <script>
+        GitHubActivity.feed({
+            username: "<?php echo get_option('github_username'); ?>",
+            <?php if(get_option('github_repository') != '') :?>
+            repository: "<?php echo get_option('github_repository'); ?>",
+            <?php endif; ?>
+            <?php if(get_option('github_limit') != '') :?>
+            limit: "<?php echo get_option('github_limit'); ?>",
+            <?php endif; ?>
+            selector: "#feed"
+        });
+    </script>
+<?php endif; ?>
 <?php get_footer(); ?>

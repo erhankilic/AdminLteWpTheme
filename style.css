@@ -7,6 +7,9 @@
 	Author URI: http://www.erhankilic.org
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, erhan kılıç
 */
+.content {
+    max-width: 1170px
+}
 
 /***** Heder *****/
 .fixed .content-wrapper {
@@ -91,13 +94,6 @@
 #post .box.box-widget>.box-header>.user-block>.description {
     margin-left: 0;
 }
-#post .description {
-    margin-bottom: 10px;
-}
-
-#post .description h2 {
-    display: inline-block;
-}
 
 #post .post-content .wp-caption {
     margin: 5px;
@@ -114,7 +110,8 @@
 }
 
 #post .post-content img{
-    max-width: 100%;
+    max-width: 95%;
+    height: auto;
     display: inline-block;
     position: relative;
     margin: 10px;
@@ -134,12 +131,6 @@
 #post .side-bar ul {
     padding-left: 0;
     list-style-type: none;
-}
-#post .author-info .author-description .author-avatar,
-#post .author-info .author-description h3
-{
-    display: inline-block;
-    margin: 5px;
 }
 #post ol.commentlist {
     padding-left: 0;
@@ -191,7 +182,7 @@
 /***** Feed & Accordion *****/
 #feed,
 #accordion{
-    max-height: 300px;
+    height: 288px;
     overflow: auto;
 }
 
@@ -210,7 +201,7 @@
 
 #carousel img{
     width: 100%;
-    height: 500px;
+    height: 350px;
 }
 
 .carousel-caption {
@@ -236,27 +227,30 @@
     padding: 10px;
 }
 
-/***** Time line *****/
-.timeline-item>.timeline-body .caption {
-    overflow: hidden;
-    position: relative;
-    display: block;
+/***** Posts *****/
+#posts .box.box-widget>.box-header>.user-block>.username,
+#posts .box.box-widget>.box-header>.user-block>.description {
+    margin-left: 0;
+}
+#posts .box.box-widget>.box-header>.user-block>.username {
     width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
-
-.timeline-item>.timeline-body .caption>a>img {
-    -webkit-transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    transition: all 0.7s ease-in-out;
-    margin: 0 auto;
+#posts .box.box-widget>.box-body {
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 10px solid #fff;
 }
-
-.timeline-item>.timeline-body .caption>a>img:hover {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
+#posts .box.box-widget>.box-body>.caption {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+#posts .box.box-widget>.box-body>a {
+    color: #1e282c;
+    text-decoration: none;
 }
 
 /***** Widgets *****/
@@ -298,12 +292,6 @@ pre {
     font-weight: 600;
 }
 
-@media (min-width: 1600px) {
-    #carousel img{
-        height: 600px;
-    }
-}
-
 @media (max-width: 767px) {
     .navbar-custom-menu .navbar-nav {
         display: none;
@@ -311,7 +299,9 @@ pre {
     .header-mobile-menu {
         display: block !important;
     }
-
+    .gallery-item {
+        width: 100%!important;
+    }
     #carousel img{
         height: 300px;
     }
