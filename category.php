@@ -8,15 +8,22 @@ $yourcat = get_category($cat);
         <!-- Main content -->
         <section class="content">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    "<?php echo single_cat_title(); ?>"
-                </h1>
-                <ol class="breadcrumb">
-                    <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
-                    <li class="active"><?php echo single_cat_title(); ?></li>
-                </ol>
-            </section>
+            <div class="box box-widget">
+                <div class="box-header with-border">
+                    <section class="content-header">
+                        <h1>
+                            "<?php echo single_cat_title(); ?>"
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
+                            <li class="active"><?php echo single_cat_title(); ?></li>
+                        </ol>
+                    </section>
+                    <p><?php echo category_description() ?></p>
+
+                </div>
+                <!-- /.box-header -->
+            </div>
 
             <!-- row -->
             <div class="row">

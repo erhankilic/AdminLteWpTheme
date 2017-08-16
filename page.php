@@ -31,23 +31,25 @@
                                     <h2><?php the_title(); ?></h2>
                                     <ul class="list-inline">
                                         <li><i class="fa fa-share"></i> Share</li>
-                                        <li><div class="fb-share-button" data-href="<?php the_permalink() ?>"
-                                                 data-layout="button_count"></div></li>
-                                        <li><div style="display:inline-block;vertical-align:top">
-                                                <a href="https://twitter.com/share" class="twitter-share-button"
-                                                   data-url="<?php the_permalink() ?>"
-                                                   data-text="<?php the_title(); ?>"> Tweet</a></div></li>
-                                        <li><div style="display:inline-block;vertical-align:top"><a href="//www.pinterest.com/pin/create/button/"
-                                                                                                    data-pin-do="buttonBookmark" data-pin-color="red">
-                                                    <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png"/>
-                                                </a></div></li>
-                                        <li><div style="display:inline-block;vertical-align:top"><script type="IN/Share" data-counter="right"></script></div>
+                                        <li>
+                                            <a target="_blank" title="<?php the_title(); ?>" class="fa fa-facebook-square fa-2x"
+                                               href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>">
+                                            </a>
                                         </li>
-                                        <li><a href="//www.reddit.com/submit?url=<?php the_permalink() ?>"
-                                               target="_blank"> <img src="//www.redditstatic.com/spreddit7.gif"
-                                                                     alt="submit to reddit" border="0"/> </a></li>
-                                        <li><div style="display:inline-block;vertical-align:top"><a class="g-plusone" data-size="medium"
-                                                                                                    data-href="<?php the_permalink() ?>"></a></div></li>
+                                        <li>
+                                            <a target="_blank" title="<?php the_title(); ?>" class="fa fa-twitter-square fa-2x"
+                                               href="http://twitter.com/intent/tweet?status=<?php the_title(); ?>+<?php the_permalink() ?>">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" title="<?php the_title(); ?>" class="fa fa-linkedin-square fa-2x"
+                                               href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" title="<?php the_title(); ?>" class="fa fa-google-plus-square fa-2x"
+                                               href="https://plus.google.com/share?url=<?php the_permalink() ?>"></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -59,23 +61,25 @@
                                 <!-- Social sharing buttons -->
                                 <ul class="list-inline">
                                     <li><i class="fa fa-share"></i> Share</li>
-                                    <li><div class="fb-share-button" data-href="<?php the_permalink() ?>"
-                                             data-layout="button_count"></div></li>
-                                    <li><div style="display:inline-block;vertical-align:top">
-                                            <a href="https://twitter.com/share" class="twitter-share-button"
-                                               data-url="<?php the_permalink() ?>"
-                                               data-text="<?php the_title(); ?>"> Tweet</a></div></li>
-                                    <li><div style="display:inline-block;vertical-align:top"><a href="//www.pinterest.com/pin/create/button/"
-                                                                                                data-pin-do="buttonBookmark" data-pin-color="red">
-                                                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png"/>
-                                            </a></div></li>
-                                    <li><div style="display:inline-block;vertical-align:top"><script type="IN/Share" data-counter="right"></script></div>
+                                    <li>
+                                        <a target="_blank" title="<?php the_title(); ?>" class="fa fa-facebook-square fa-2x"
+                                           href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>">
+                                        </a>
                                     </li>
-                                    <li><a href="//www.reddit.com/submit?url=<?php the_permalink() ?>"
-                                           target="_blank"> <img src="//www.redditstatic.com/spreddit7.gif"
-                                                                 alt="submit to reddit" border="0"/> </a></li>
-                                    <li><div style="display:inline-block;vertical-align:top"><a class="g-plusone" data-size="medium"
-                                                                                                data-href="<?php the_permalink() ?>"></a></div></li>
+                                    <li>
+                                        <a target="_blank" title="<?php the_title(); ?>" class="fa fa-twitter-square fa-2x"
+                                           href="http://twitter.com/intent/tweet?status=<?php the_title(); ?>+<?php the_permalink() ?>">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" title="<?php the_title(); ?>" class="fa fa-linkedin-square fa-2x"
+                                           href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" title="<?php the_title(); ?>" class="fa fa-google-plus-square fa-2x"
+                                           href="https://plus.google.com/share?url=<?php the_permalink() ?>"></a>
+                                    </li>
                                     <li class="pull-right text-muted">
                                         <i class="fa fa-comments-o margin-r-5"></i>
                                         Comments (<?php comments_number('0', '1', '%'); ?>)
@@ -108,20 +112,4 @@
         </section>
         <!-- /.content -->
     </div><!-- /.content-wrapper -->
-    <script>!function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'twitter-wjs');
-    </script>
-    <script type="text/javascript" async defer
-            src="//assets.pinterest.com/js/pinit.js"></script>
-    <script src="//platform.linkedin.com/in.js"
-            type="text/javascript"> lang: en_US</script>
-    <script src="https://apis.google.com/js/platform.js" async
-            defer></script>
 <?php get_footer(); ?>

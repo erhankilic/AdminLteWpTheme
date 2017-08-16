@@ -7,6 +7,12 @@
 	Author URI: http://www.erhankilic.org
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, erhan kılıç
 */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.content {
+    font-size: 21px;
+}
 
 /***** Heder *****/
 .fixed .content-wrapper {
@@ -107,6 +113,10 @@
     border: 5px solid #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     padding: 0;
+}
+
+#post .post-content {
+    padding: 0 5%;
 }
 
 #post .post-content .wp-caption {

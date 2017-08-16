@@ -74,7 +74,7 @@
     </script>
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-purple fixed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 <div id="loader" class="loader-wrap">
     <div class="middle">
         <div class="loader"></div>

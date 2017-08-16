@@ -133,6 +133,13 @@ if (!function_exists('of_options')) {
             'type' => 'text');
 
         $options[] = array(
+            'name' => __('Do you want Side Bar?', 'options_check'),
+            'desc' => __('Do you want Side Bar? If you check, it\'ll be shown at posts.', 'options_check'),
+            'id' => 'sidebar_check',
+            'std' => '0',
+            'type' => 'checkbox');
+
+        $options[] = array(
             "name" => "Home Page Settings",
             "type" => "heading"
         );

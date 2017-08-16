@@ -15,6 +15,7 @@
 <div class="control-sidebar-bg"></div>
 
 </div><!-- ./wrapper -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
@@ -22,7 +23,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins -->
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/skins/skin-purple.min.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/skins/skin-blue.min.css">
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 <!-- Bootstrap 3.3.5 -->
 <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
