@@ -19,12 +19,67 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
+    <style>
+        .loader-wrap {
+            position: fixed;
+            z-index: 99999;
+            background: rgba(25, 25, 25, 1);
+            width: 100%;
+            height: 100%;
+            display: table;
+        }
 
+        .loader-wrap > .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .loader-wrap > .middle > .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <!-- jQuery 2.2.3 -->
     <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script>
+        $(window).load(function () {
+            // PAGE IS FULLY LOADED
+            // FADE OUT YOUR OVERLAYING DIV
+            $('#loader').fadeOut(1000);
+        });
+    </script>
     <?php wp_head(); ?>
 </head>
 <body class="hold-transition skin-purple fixed sidebar-mini">
+<div id="loader" class="loader-wrap">
+    <div class="middle">
+        <div class="loader"></div>
+    </div>
+</div>
 <div class="wrapper">
 
     <header class="main-header">
@@ -77,27 +132,27 @@
                         <ul class="list-unstyled list-inline">
                             <?php if (get_option('facebook') != '') : ?>
                                 <li><a href="<?php echo get_option('facebook'); ?>" target="_blank"><i
-                                            class="fa fa-facebook"></i></a></li>
+                                                class="fa fa-facebook"></i></a></li>
                             <?php endif; ?>
                             <?php if (get_option('twitter') != '') : ?>
                                 <li><a href="<?php echo get_option('twitter'); ?>" target="_blank"><i
-                                            class="fa fa-twitter"></i></a></li>
+                                                class="fa fa-twitter"></i></a></li>
                             <?php endif; ?>
                             <?php if (get_option('google-plus') != '') : ?>
                                 <li><a href="<?php echo get_option('google-plus'); ?>" target="_blank"><i
-                                            class="fa fa-google-plus"></i></a></li>
+                                                class="fa fa-google-plus"></i></a></li>
                             <?php endif; ?>
                             <?php if (get_option('pinterest') != '') : ?>
                                 <li><a href="<?php echo get_option('pinterest'); ?>" target="_blank"><i
-                                            class="fa fa-pinterest"></i></a></li>
+                                                class="fa fa-pinterest"></i></a></li>
                             <?php endif; ?>
                             <?php if (get_option('instagram') != '') : ?>
                                 <li><a href="<?php echo get_option('instagram'); ?>" target="_blank"><i
-                                            class="fa fa-instagram"></i></a></li>
+                                                class="fa fa-instagram"></i></a></li>
                             <?php endif; ?>
                             <?php if (get_option('linkedin') != '') : ?>
                                 <li><a href="<?php echo get_option('linkedin'); ?>" target="_blank"><i
-                                            class="fa fa-linkedin"></i></a></li>
+                                                class="fa fa-linkedin"></i></a></li>
                             <?php endif; ?>
                         </ul>
                     </div>

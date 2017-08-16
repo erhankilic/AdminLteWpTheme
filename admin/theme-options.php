@@ -7,7 +7,7 @@ if (!function_exists('of_options')) {
     {
 
 // VARIABLES
-        $themename = get_theme_data(STYLESHEETPATH . '/style.css');
+        $themename = wp_get_theme();
         $themename = $themename['Name'];
         $shortname = "al";
 
@@ -41,7 +41,7 @@ if (!function_exists('of_options')) {
         $featured_options_select = array("2", "4", "6", "8", "10", "12");
 
 // Column Width Options
-        $widths = array("1","2","3","4","5","6","7","8","9","10","11","12");
+        $widths = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
 
 //Stylesheets Reader
         $alt_stylesheet_path = OF_FILEPATH . '/styles/';
@@ -67,7 +67,8 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             "name" => "General Settings",
-            "type" => "heading");
+            "type" => "heading"
+        );
 
         $options[] = array(
             'name' => __('Do you want logo panel?', 'options_check'),
@@ -133,7 +134,8 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             "name" => "Home Page Settings",
-            "type" => "heading");
+            "type" => "heading"
+        );
 
         $options[] = array(
             'name' => __('Do you want Carousel Slider?', 'options_check'),
