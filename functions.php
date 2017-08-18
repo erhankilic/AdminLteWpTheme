@@ -60,7 +60,7 @@ class Sidebar_Nav_Menu extends Walker_Nav_Menu
         $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
         $attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
 
-        $item_output = sprintf('%1$s<a%2$s><i class="fa fa-chevron-right"></i><span>%3$s%4$s%5$s</span></a>%6$s',
+        $item_output = sprintf('%1$s<a%2$s><span>%3$s%4$s%5$s</span></a>%6$s',
             $args->before,
             $attributes,
             $args->link_before,

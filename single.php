@@ -26,6 +26,7 @@
                 <!-- /.col -->
                 <div class="col-md-<?php echo get_option('sidebar_check') == 'true' ? 9 : 12 ?>">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'high'); ?>
                         <div class="box box-widget">
                             <div class="box-header with-border">
                                 <div class="user-block">
@@ -72,14 +73,8 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), array(1000,1000)); ?>
                                 <div class="box box-widget">
-                                    <div class="box-body box-profile">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <img src="<?php echo $img[0]; ?>" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
-                                        <?php else : ?>
-                                            <img src="<?php bloginfo('template_url'); ?>/assets/img/default.jpg" class="img-responsive" alt="<?php the_title(); ?>" title="<?php the_title() ?>"/>
-                                        <?php endif ?>
+                                    <div class="box-body box-profile" style="background-image: url('<?php echo has_post_thumbnail() ? $img[0] : bloginfo('template_url') . '/assets/img/default.jpg' ?>')">
                                         <a class="author-link"
                                            href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
                                            rel="author">
@@ -131,29 +126,15 @@
                             </div>
                             <div class="box box-widget">
                                 <div class="box-body">
-                                    <div class="box-header with-border">
-                                        <h3>Benzer Yazılar</h3>
-                                    </div>
                                     <div class="row related-articles clearfix">
                                         <?php $posts = get_posts('orderby=rand&numberposts=8');
                                         foreach ($posts as $post) : ?>
+                                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); ?>
                                             <div class="col-xs-6 col-sm-4 col-md-3">
-                                                <div class="caption">
-                                                    <a href="<?php the_permalink() ?>">
-                                                        <?php $resim_yolu = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');
-                                                        if (has_post_thumbnail()) { ?>
-
-                                                            <img src="<?php echo $resim_yolu[0]; ?>"
-                                                                 class="img-responsive"
-                                                                 alt="<?php the_title(); ?>"
-                                                                 title="<?php the_title() ?>"/>
-
-                                                        <?php } ?>
-                                                    </a>
-                                                </div>
-                                                <span class="users-list-date"><a
-                                                        href="<?php the_permalink() ?>"
-                                                        title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
+                                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="caption" style="background-image: url('<?php echo $image[0]; ?>')">
+                                                    <div class="overlay"></div>
+                                                    <span><?php the_title(); ?></span>
+                                                </a>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>

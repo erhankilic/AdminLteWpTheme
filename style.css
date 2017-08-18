@@ -7,11 +7,32 @@
 	Author URI: http://www.erhankilic.org
 	Tags:  wordpress tema, wordpress theme, blog teması, blog theme, erhan kılıç
 */
-body {
+body, p, span, h1, h2, h3, h4, h5, h6, a {
     font-family: 'Roboto', sans-serif;
 }
-.content {
-    font-size: 21px;
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 26px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 14px;
 }
 
 /***** Heder *****/
@@ -107,6 +128,9 @@ body {
 #post .box-body.box-profile > a {
     display: block;
     margin-top: -50px;
+    padding-top: 15px;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
 }
 
 #post .box-body.box-profile > a > img {
@@ -115,18 +139,49 @@ body {
     padding: 0;
 }
 
-#post .post-content {
+#post .box-body.box-profile > a > .text-muted {
+    color: #fff;
+    margin: 0;
+}
+
+#post > .row > .col-md-12 > .box.box-widget {
+    line-height: 30px;
+    font-size: 1.25em;
+}
+
+#post > .row > .col-md-12 > .box.box-widget > .box-body,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
+    padding: 0;
+}
+
+#post > .row > .col-md-12 > .box.box-widget > .box-header,
+#post > .row > .col-md-12 > .box.box-widget > .box.box-widget,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .comment-respond,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .post-content,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .list-inline {
     padding: 0 5%;
+}
+
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
+    padding: 35% 0 0 0;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
 }
 
 #post .post-content .wp-caption {
     margin: 5px;
     padding: 10px;
-    border: 1px solid silver;
-    border-radius: 25px;
     max-width: 100%;
     overflow: hidden;
     position: relative;
+}
+
+#post .post-content .wp-caption > p{
+    max-width: 100%;
+    padding: 0 25px;
+    font-weight: bold;
+    font-size: .75em;
 }
 
 #post .post-content .wp-caption img {
@@ -191,20 +246,43 @@ body {
     margin-top: 15px;
 }
 
-#post .related-articles div {
-    height: 225px;
-    overflow: hidden;
-}
-
-#post .related-articles div .caption {
-    height: 150px;
-    overflow: hidden;
+#post .related-articles .caption {
+    padding: 50% 0;
     position: relative;
+    background-position: center;
+    background-size: cover;
+    margin: 15px 0;
+    color: #fff;
+    display: flex;
+    overflow: hidden;
 }
 
-#post .related-articles div .caption img {
-    height: 150px;
-    margin: 0 auto;
+#post .related-articles .caption > .overlay {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transition: all .5s ease;
+}
+
+#post .related-articles .caption > span {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+#post .related-articles .caption:hover >.overlay {
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .header-mobile-menu {
