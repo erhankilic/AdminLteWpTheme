@@ -161,6 +161,9 @@ h6 {
 #post > .row > .col-md-12 > .box.box-widget > .box.box-widget,
 #post > .row > .col-md-12 > .box.box-widget > .box-body > .comment-respond,
 #post > .row > .col-md-12 > .box.box-widget > .box-body > .post-content,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > #comments,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .navigation,
+#post > .row > .col-md-12 > .box.box-widget > .box-body > .commentlist,
 #post > .row > .col-md-12 > .box.box-widget > .box-body > .list-inline {
     padding: 0 5%;
 }
