@@ -74,7 +74,7 @@
     </script>
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-blue fixed sidebar-mini">
+<body class="hold-transition skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue' ?> fixed sidebar-mini">
 <div id="loader" class="loader-wrap">
     <div class="middle">
         <div class="loader"></div>

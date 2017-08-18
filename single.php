@@ -26,7 +26,7 @@
                 <!-- /.col -->
                 <div class="col-md-<?php echo get_option('sidebar_check') == 'true' ? 9 : 12 ?>">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'high'); ?>
+                        <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
                         <div class="box box-widget">
                             <div class="box-header with-border">
                                 <div class="user-block">

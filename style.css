@@ -154,7 +154,10 @@ h6 {
     padding: 0;
 }
 
-#post > .row > .col-md-12 > .box.box-widget > .box-header,
+#post > .row > .col-md-12 > .box.box-widget > .box-header {
+    padding: 0 15px;
+}
+
 #post > .row > .col-md-12 > .box.box-widget > .box.box-widget,
 #post > .row > .col-md-12 > .box.box-widget > .box-body > .comment-respond,
 #post > .row > .col-md-12 > .box.box-widget > .box-body > .post-content,

@@ -23,7 +23,7 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins -->
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/skins/skin-blue.min.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/dist/css/skins/skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue' ?>.min.css">
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 <!-- Bootstrap 3.3.5 -->
 <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/bootstrap/js/bootstrap.min.js"></script>

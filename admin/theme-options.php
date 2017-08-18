@@ -42,6 +42,7 @@ if (!function_exists('of_options')) {
 
 // Column Width Options
         $widths = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
+        $colors = array('black', 'black-light', 'blue', 'blue-light', 'green', 'green-light', 'purple', 'red', 'red-light', 'yellow', 'yellow-light');
 
 //Stylesheets Reader
         $alt_stylesheet_path = OF_FILEPATH . '/styles/';
@@ -71,6 +72,14 @@ if (!function_exists('of_options')) {
         );
 
         $options[] = array(
+            'name' => __('Theme Color', 'options_check'),
+            'desc' => __('You can change the theme color.', 'options_check'),
+            'id' => 'theme_color',
+            'std' => 'blue',
+            'type' => 'select',
+            'options' => $colors);
+
+        $options[] = array(
             'name' => __('Do you want logo panel?', 'options_check'),
             'desc' => __('Do you want logo panel? If you check, it\'ll be shown at top of the side menu.', 'options_check'),
             'id' => 'panel',
@@ -81,6 +90,7 @@ if (!function_exists('of_options')) {
             "name" => "Logo",
             "desc" => "You can upload an image for logo. If you check logo panel true, it'll be shown.",
             "id" => "logo",
+            'std' => '',
             "type" => "upload");
 
         $options[] = array(
