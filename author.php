@@ -3,17 +3,6 @@
     <div class="content-wrapper">
         <!-- Main content -->
         <section class="content">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    <?php echo get_the_author(); ?>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><i class="fa fa-dashboard"></i> <?php bloginfo('name'); ?></li>
-                    <li class="active"><?php echo get_the_author(); ?></li>
-                </ol>
-            </section>
-
             <!-- row -->
             <div class="row">
                 <div class="box box-widget">
@@ -29,25 +18,24 @@
                         <div class="info text-center">
                             <ul class="list-unstyled list-inline">
                                 <?php if (get_the_author_meta('dt_facebook') != '') : ?>
-                                    <li><a href="<?php echo get_the_author_meta('dt_facebook'); ?>" target="_blank"><i
-                                                class="fa fa-facebook"></i></a></li>
+                                    <li><a href="<?php echo get_the_author_meta('dt_facebook'); ?>" target="_blank">
+                                            <i class="fa fa-facebook fa-2x"></i></a></li>
                                 <?php endif; ?>
                                 <?php if (get_the_author_meta('dt_twitter') != '') : ?>
-                                    <li><a href="<?php echo get_the_author_meta('dt_twitter'); ?>" target="_blank"><i
-                                                class="fa fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo get_the_author_meta('dt_twitter'); ?>" target="_blank">
+                                            <i class="fa fa-twitter fa-2x"></i></a></li>
                                 <?php endif; ?>
                                 <?php if (get_the_author_meta('dt_googleplus') != '') : ?>
-                                    <li><a href="<?php echo get_the_author_meta('dt_google-plus'); ?>"
-                                           target="_blank"><i
-                                                class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="<?php echo get_the_author_meta('dt_google-plus'); ?>" target="_blank">
+                                            <i class="fa fa-google-plus fa-2x"></i></a></li>
                                 <?php endif; ?>
                                 <?php if (get_the_author_meta('dt_pinterest') != '') : ?>
-                                    <li><a href="<?php echo get_the_author_meta('dt_pinterest'); ?>" target="_blank"><i
-                                                class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="<?php echo get_the_author_meta('dt_pinterest'); ?>" target="_blank">
+                                            <i class="fa fa-pinterest fa-2x"></i></a></li>
                                 <?php endif; ?>
                                 <?php if (get_the_author_meta('dt_linkedin') != '') : ?>
-                                    <li><a href="<?php echo get_the_author_meta('dt_linkedin'); ?>" target="_blank"><i
-                                                class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="<?php echo get_the_author_meta('dt_linkedin'); ?>" target="_blank">
+                                            <i class="fa fa-linkedin fa-2x"></i></a></li>
                                 <?php endif; ?>
                             </ul>
                         </div>

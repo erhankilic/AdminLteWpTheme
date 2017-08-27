@@ -31,18 +31,14 @@ if (!function_exists('of_options')) {
             $of_pages[$of_page->ID] = $of_page->post_name;
         }
 
-// Image Alignment radio box
-        $options_thumb_align = array("alignleft" => "Left", "alignright" => "Right", "aligncenter" => "Center");
-
-// Image Links to Options
-        $options_image_link_to = array("image" => "The Image", "post" => "The Post");
-
-// Number of featured posts to display
-        $featured_options_select = array("2", "4", "6", "8", "10", "12");
-
 // Column Width Options
         $widths = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
+
+// Theme Color Options
         $colors = array('black', 'black-light', 'blue', 'blue-light', 'green', 'green-light', 'purple', 'red', 'red-light', 'yellow', 'yellow-light');
+
+// Theme Layout Options
+        $layouts = array('layout-boxed', 'layout-top-nav', 'fixed', 'layout-top-nav fixed');
 
 //Stylesheets Reader
         $alt_stylesheet_path = OF_FILEPATH . '/styles/';
@@ -78,6 +74,21 @@ if (!function_exists('of_options')) {
             'std' => 'blue',
             'type' => 'select',
             'options' => $colors);
+
+        $options[] = array(
+            'name' => __('Theme Layout', 'options_check'),
+            'desc' => __('You can change the theme layout. Not: If you selet "layout-top-nav", left menu will not appear.', 'options_check'),
+            'id' => 'theme_layout',
+            'std' => 'fixed',
+            'type' => 'select',
+            'options' => $layouts);
+
+        $options[] = array(
+            'name' => __('Do you want left menu collapsed?', 'options_check'),
+            'desc' => __('Do you want left menu collapsed?', 'options_check'),
+            'id' => 'left menu_check',
+            'std' => '0',
+            'type' => 'checkbox');
 
         $options[] = array(
             'name' => __('Do you want logo panel?', 'options_check'),
@@ -144,7 +155,7 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Do you want Side Bar?', 'options_check'),
-            'desc' => __('Do you want Side Bar? If you check, it\'ll be shown at posts.', 'options_check'),
+            'desc' => __('Do you want Side Bar? If you check, it will not appear at posts.', 'options_check'),
             'id' => 'sidebar_check',
             'std' => '0',
             'type' => 'checkbox');
