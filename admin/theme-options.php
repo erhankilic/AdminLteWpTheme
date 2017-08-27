@@ -92,14 +92,14 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Do you want logo panel?', 'options_check'),
-            'desc' => __('Do you want logo panel? If you check, it\'ll be shown at top of the side menu.', 'options_check'),
+            'desc' => __('Do you want logo panel? If you check, it\'ll appear at top of the side menu.', 'options_check'),
             'id' => 'panel',
             'std' => '0',
             'type' => 'checkbox');
 
         $options[] = array(
             "name" => "Logo",
-            "desc" => "You can upload an image for logo. If you check logo panel true, it'll be shown.",
+            "desc" => "You can upload an image for logo. If you check logo panel true, it'll appear.",
             "id" => "logo",
             'std' => '',
             "type" => "upload");
@@ -167,7 +167,7 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Do you want Carousel Slider?', 'options_check'),
-            'desc' => __('Do you want Carousel Slider? If you check, it\'ll be shown at home page.', 'options_check'),
+            'desc' => __('Do you want Carousel Slider? If you check, it\'ll appear at home page.', 'options_check'),
             'id' => 'carousel_check',
             'std' => '0',
             'type' => 'checkbox');
@@ -197,7 +197,7 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Do you want Collapsible Accordion?', 'options_check'),
-            'desc' => __('Do you want Collapsible Accordion? If you check, it\'ll be shown at home page.', 'options_check'),
+            'desc' => __('Do you want Collapsible Accordion? If you check, it\'ll appear at home page.', 'options_check'),
             'id' => 'accordion_check',
             'std' => '0',
             'type' => 'checkbox');
@@ -233,8 +233,45 @@ if (!function_exists('of_options')) {
             'options' => $widths);
 
         $options[] = array(
+            'name' => __('Do you want Last Articles?', 'options_check'),
+            'desc' => __('Do you want Last Articles? If you check, it\'ll appear at home page.', 'options_check'),
+            'id' => 'last_articles_check',
+            'std' => '0',
+            'type' => 'checkbox');
+
+        $options[] = array(
+            'name' => __('Last Articles\'s Title', 'options_check'),
+            'desc' => __('You can set last articles\'s title.', 'options_check'),
+            'id' => 'last_articles_title',
+            'std' => '',
+            'type' => 'text');
+
+        $options[] = array(
+            'name' => __('Which Category\'s posts will be displayed at Last Articles?', 'options_check'),
+            'desc' => __('Select which category\'s posts will be displayed at Last Articles.', 'options_check'),
+            'id' => 'last_articles_category',
+            'std' => '1',
+            'type' => 'select',
+            'options' => $of_categories);
+
+        $options[] = array(
+            'name' => __('How many post will be displayed at Last Articles?', 'options_check'),
+            'desc' => __('How many post will be displayed at Last Articles?', 'options_check'),
+            'id' => 'last_articles_post_count',
+            'std' => '5',
+            'type' => 'text');
+
+        $options[] = array(
+            'name' => __('Last Articles Width', 'options_check'),
+            'desc' => __('You can set the Last Articles\'s feed. You can enter 1 to 12. 12 is full width.', 'options_check'),
+            'id' => 'last_articles_width',
+            'std' => '6',
+            'type' => 'select',
+            'options' => $widths);
+
+        $options[] = array(
             'name' => __('Do you want GitHub Activity Feed?', 'options_check'),
-            'desc' => __('Do you want GitHub Activity Feed? If you check, it\'ll be shown at home page.', 'options_check'),
+            'desc' => __('Do you want GitHub Activity Feed? If you check, it\'ll appear at home page.', 'options_check'),
             'id' => 'github_check',
             'std' => '0',
             'type' => 'checkbox');
@@ -299,7 +336,7 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Header Ad Mobile', 'options_check'),
-            'desc' => __('Header Ad Mobile Code. It\'ll be shown in mobile.', 'options_check'),
+            'desc' => __('Header Ad Mobile Code. It\'ll appear in mobile.', 'options_check'),
             'id' => 'ad_header_mobile',
             'std' => '',
             'type' => 'textarea');
@@ -313,14 +350,14 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Loop Ad', 'options_check'),
-            'desc' => __('Loop Ad Code. This will be shown at each post group loaded to the timeline.', 'options_check'),
+            'desc' => __('Loop Ad Code. This will appear at each post group loaded to the timeline.', 'options_check'),
             'id' => 'ad_loop',
             'std' => '',
             'type' => 'textarea');
 
         $options[] = array(
             'name' => __('Loop Ad Mobile', 'options_check'),
-            'desc' => __('Loop Ad Mobile Code. This will be shown at each post group loaded to the timeline in mobile.', 'options_check'),
+            'desc' => __('Loop Ad Mobile Code. This will appear at each post group loaded to the timeline in mobile.', 'options_check'),
             'id' => 'ad_loop_mobile',
             'std' => '',
             'type' => 'textarea');
@@ -334,7 +371,7 @@ if (!function_exists('of_options')) {
 
         $options[] = array(
             'name' => __('Footer Ad Mobile', 'options_check'),
-            'desc' => __('Footer Ad Mobile Code. It\'ll be shown in mobile.', 'options_check'),
+            'desc' => __('Footer Ad Mobile Code. It\'ll appear in mobile.', 'options_check'),
             'id' => 'ad_footer_mobile',
             'std' => '',
             'type' => 'textarea');

@@ -306,7 +306,7 @@ h6 {
 /***** Feed & Accordion *****/
 #feed,
 #accordion {
-    height: 288px;
+    height: 289px;
     overflow: auto;
 }
 

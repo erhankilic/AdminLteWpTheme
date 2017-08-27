@@ -78,9 +78,8 @@
                                     </div>
                                     <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
                                         <div class="box-body">
-                                            <a href="<?php the_permalink() ?>">
-                                                <?php the_excerpt_rss(); ?>
-                                            </a>
+                                            <p><?php the_excerpt_rss(); ?></p>
+                                            <p><a class="btn btn-primary" href="<?php the_permalink() ?>">Read More</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -89,6 +88,44 @@
                     </div>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
+        </div>
+    <?php endif; ?>
+    <?php if (get_option('last_articles_check') == 'true') : ?>
+        <div class="col-md-<?php echo get_option('last_articles_width'); ?>">
+            <div class="box box-widget">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><?php echo get_option('last_articles_title'); ?></h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ul class="products-list product-list-in-box">
+                        <?php
+                        $accordion_category = get_cat_ID(get_option('last_articles_category'));
+                        $accordion_count = get_option('last_articles_post_count');
+                        if (have_posts()) : $ali = new WP_Query("cat=$accordion_category&showposts=$accordion_count");
+                        while ($ali->have_posts()) : $ali->the_post();
+                        ?>
+                        <li class="item">
+                            <div class="product-img">
+                            <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+                            if (has_post_thumbnail()) : ?>
+                                <img src="<?php echo $img[0]; ?>" alt="<?php the_title(); ?>">
+                            <?php endif ?>
+                            </div>
+                            <div class="product-info">
+                                <a href="<?php the_permalink() ?>" class="product-title"><?php the_title(); ?></a>
+                                <span class="product-description">
+                                  <?php the_excerpt_rss(); ?>
+                                </span>
+                            </div>
+                        </li>
+                        <!-- /.item -->
+                        <?php endwhile ?>
+                        <?php endif ?>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
         </div>
     <?php endif; ?>
     <?php if (get_option('github_check') == 'true') : ?>
@@ -121,9 +158,7 @@
                                     <ul class="description list-inline">
                                         <li><i class="fa fa-calendar"></i> <?php the_time('d.m.Y ') ?> |
                                         </li>
-                                        <li><i class="fa fa-user"></i> <a
-                                                    href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
-                                                    title="<?php the_author(); ?>"><?php the_author(); ?></a>
+                                        <li><i class="fa fa-user"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a>
                                             |
                                         </li>
                                         <li><i class="fa fa-folder-open"></i> <?php the_category(', ') ?> |

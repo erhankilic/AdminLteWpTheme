@@ -11,7 +11,7 @@ Admin Lte Wordpress Theme
 
 1- "bower install"
 
-You must have bower installed for installing the requires.
+You must have bower installed for installing the requires. If you don't know how to use bower, just download admin lte and move under the vendor folder.
 
 2- Create a folder at your website "wp-content/themes/" dir.
 
