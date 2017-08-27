@@ -74,9 +74,7 @@
     </script>
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue' ?>
-    <?php echo get_option('theme_layout') ? get_option('theme_layout') : 'fixed' ?>
-    <?php echo get_option('panel') == 'true' ? 'sidebar-collapse' : '' ?>">
+<body class="hold-transition skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue' ?> <?php echo get_option('theme_layout') ? get_option('theme_layout') : 'fixed' ?> <?php echo get_option('left_menu_check') == 'true' ? 'sidebar-collapse' : '' ?>">
 <div id="loader" class="loader-wrap">
     <div class="middle">
         <div class="loader"></div>

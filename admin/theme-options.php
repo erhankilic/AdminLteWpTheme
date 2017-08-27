@@ -86,7 +86,7 @@ if (!function_exists('of_options')) {
         $options[] = array(
             'name' => __('Do you want left menu collapsed?', 'options_check'),
             'desc' => __('Do you want left menu collapsed?', 'options_check'),
-            'id' => 'left menu_check',
+            'id' => 'left_menu_check',
             'std' => '0',
             'type' => 'checkbox');
 
