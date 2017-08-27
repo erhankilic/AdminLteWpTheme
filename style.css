@@ -144,31 +144,31 @@ h6 {
     margin: 0;
 }
 
-#post > .row > .col-md-12 > .box.box-widget {
+#post > .col-md-12 > .box.box-widget {
     line-height: 30px;
     font-size: 1.25em;
 }
 
-#post > .row > .col-md-12 > .box.box-widget > .box-body,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
+#post > .col-md-12 > .box.box-widget > .box-body,
+#post > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
     padding: 0;
 }
 
-#post > .row > .col-md-12 > .box.box-widget > .box-header {
+#post > .col-md-12 > .box.box-widget > .box-header {
     padding: 0 15px;
 }
 
-#post > .row > .col-md-12 > .box.box-widget > .box.box-widget,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .comment-respond,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .post-content,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > #comments,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .navigation,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .commentlist,
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .list-inline {
+#post > .col-md-12 > .box.box-widget > .box.box-widget,
+#post > .col-md-12 > .box.box-widget > .box-body > .comment-respond,
+#post > .col-md-12 > .box.box-widget > .box-body > .post-content,
+#post > .col-md-12 > .box.box-widget > .box-body > #comments,
+#post > .col-md-12 > .box.box-widget > .box-body > .navigation,
+#post > .col-md-12 > .box.box-widget > .box-body > .commentlist,
+#post > .col-md-12 > .box.box-widget > .box-body > .list-inline {
     padding: 0 5%;
 }
 
-#post > .row > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
+#post > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
     padding: 35% 0 0 0;
     background-position: center;
     background-size: cover;

@@ -1,3 +1,7 @@
+
+</section>
+<!-- /.content -->
+</div><!-- /.content-wrapper -->
 <footer class="main-footer">
     <?php echo get_option('footer_text'); ?>
 </footer>

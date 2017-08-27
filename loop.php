@@ -18,7 +18,7 @@
             <div class="box box-widget">
                 <div class="box-header with-border">
                     <div class="user-block">
-                        <span class="username"><a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a></span>
+                        <span class="username"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" title="<?php the_title(); ?> "><?php the_title(); ?></a></span>
                         <ul class="description list-inline">
                             <li><i class="fa fa-calendar"></i> <?php the_time('d.m.Y ') ?> | </li>
                             <li><i class="fa fa-user"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> | </li>
@@ -45,5 +45,5 @@
             </div>
             <!-- /.box -->
         </div>
-<?php endwhile; ?>
+    <?php endwhile; ?>
 <?php endif; ?>
