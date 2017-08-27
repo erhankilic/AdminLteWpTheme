@@ -1,4 +1,6 @@
-
+    <?php if (get_option('theme_layout') == 'layout-top-nav' || get_option('theme_layout') == 'layout-top-nav fixed') : ?>
+        </div>
+    <?php endif ?>
 </section>
 <!-- /.content -->
 </div><!-- /.content-wrapper -->

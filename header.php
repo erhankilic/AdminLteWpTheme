@@ -275,3 +275,6 @@
         <!-- Main content -->
         <section class="content">
             <!-- row -->
+            <?php if (get_option('theme_layout') == 'layout-top-nav' || get_option('theme_layout') == 'layout-top-nav fixed') : ?>
+                <div class="container">
+            <?php endif ?>

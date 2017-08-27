@@ -168,6 +168,10 @@ h6 {
     padding: 0 5%;
 }
 
+#post > .col-md-12 > .box.box-widget > .box-body #comment {
+    max-width: 100%;
+}
+
 #post > .col-md-12 > .box.box-widget > .box-body > .box.box-widget > .box-body.box-profile {
     padding: 35% 0 0 0;
     background-position: center;
@@ -437,5 +441,10 @@ pre {
 
     #carousel img {
         height: 300px;
+    }
+
+    .content, .content > .container {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
