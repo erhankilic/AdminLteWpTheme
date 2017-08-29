@@ -4,7 +4,7 @@ AdminLTE Wordpress Theme
 
 **AdminLteWpTheme** is a wordpress theme based on **[AdminLTE](https://github.com/almasaeed2010/AdminLTE)**.
 
-**Live Preview on [Erhan Kılıç](https://erhankilic.org)**
+**Live Preview on [Erhan Kılıç](http://erhankilic.org)**
 
 !["AdminLteWpTheme Presentation"](https://raw.githubusercontent.com/erhankilic/AdminLteWpTheme/master/screenshot.png "AdminLteWpTheme Presentation")
 
@@ -12,7 +12,7 @@ AdminLTE Wordpress Theme
 
 1- "bower install"
 
-You must have bower installed for installing the requires. If you don't know how to use bower, just download admin lte and move under the vendor folder.
+You must have bower installed for installing the requires. If you don't know how to use bower, just download AdminLTE and move under the vendor folder.
 
 2- Create a folder at your website "wp-content/themes/" dir.
 
