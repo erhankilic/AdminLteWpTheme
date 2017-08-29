@@ -1,6 +1,6 @@
 # AdminLteWpTheme
 -----------------
-Admin Lte Wordpress Theme
+AdminLTE Wordpress Theme
 
 **AdminLteWpTheme** is a wordpress theme based on **[AdminLTE](https://github.com/almasaeed2010/AdminLTE)**.
 
@@ -9,7 +9,6 @@ Admin Lte Wordpress Theme
 !["AdminLteWpTheme Presentation"](https://raw.githubusercontent.com/erhankilic/AdminLteWpTheme/master/screenshot.png "AdminLteWpTheme Presentation")
 
 ### Installing
-------------
 
 1- "bower install"
 
