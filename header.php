@@ -62,6 +62,14 @@
                 transform: rotate(360deg);
             }
         }
+        <?php if (get_option('background')): ?>
+            .content-wrapper {
+                background-image: url("<?php echo get_option('background') ?>");
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+            }
+        <?php endif ?>
     </style>
     <!-- jQuery 2.2.3 -->
     <script src="<?php bloginfo('template_url'); ?>/vendor/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>

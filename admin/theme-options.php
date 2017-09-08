@@ -91,6 +91,13 @@ if (!function_exists('of_options')) {
             'type' => 'checkbox');
 
         $options[] = array(
+            "name" => "Background Image",
+            "desc" => "You can upload an image for background.",
+            "id" => "background",
+            'std' => '',
+            "type" => "upload");
+
+        $options[] = array(
             'name' => __('Do you want logo panel?', 'options_check'),
             'desc' => __('Do you want logo panel? If you check, it\'ll appear at top of the side menu.', 'options_check'),
             'id' => 'panel',
