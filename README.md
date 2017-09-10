@@ -12,7 +12,7 @@ AdminLTE Wordpress Theme
 
 1- "bower install"
 
-You must have bower installed for installing the requires. If you don't know how to use bower, just download AdminLTE and move under the vendor folder.
+You must have bower installed for installing the requires. If you don't know how to use bower, just download AdminLTE, create "vendor" folder and move under the vendor folder.
 
 2- Create a folder at your website "wp-content/themes/" dir.
 
